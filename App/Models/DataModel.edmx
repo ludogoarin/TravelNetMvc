@@ -1,0 +1,1633 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="caval_goModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="caval_goModelStoreContainer">
+          <EntitySet Name="cg_Activities" EntityType="caval_goModel.Store.cg_Activities" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="cg_Activities_Info" EntityType="caval_goModel.Store.cg_Activities_Info" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="cg_cms_Pages" EntityType="caval_goModel.Store.cg_cms_Pages" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="cg_cms_Pages_Info" EntityType="caval_goModel.Store.cg_cms_Pages_Info" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="cg_cms_StaticBlocks" EntityType="caval_goModel.Store.cg_cms_StaticBlocks" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="cg_cms_StaticBlocks_Info" EntityType="caval_goModel.Store.cg_cms_StaticBlocks_Info" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="cg_CustomerProfile" EntityType="caval_goModel.Store.cg_CustomerProfile" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="cg_Destinations" EntityType="caval_goModel.Store.cg_Destinations" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="cg_Destinations_Info" EntityType="caval_goModel.Store.cg_Destinations_Info" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="cg_Languages" EntityType="caval_goModel.Store.cg_Languages" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="cg_LanguageTranslations" EntityType="caval_goModel.Store.cg_LanguageTranslations" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="cg_Products" EntityType="caval_goModel.Store.cg_Products" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="cg_Products_Activities_Map" EntityType="caval_goModel.Store.cg_Products_Activities_Map" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="cg_Products_Dates" EntityType="caval_goModel.Store.cg_Products_Dates" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="cg_Products_Info" EntityType="caval_goModel.Store.cg_Products_Info" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="cg_Products_Info_Tabs" EntityType="caval_goModel.Store.cg_Products_Info_Tabs" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="cg_Products_Photos" EntityType="caval_goModel.Store.cg_Products_Photos" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="cg_Products_Tags" EntityType="caval_goModel.Store.cg_Products_Tags" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="cg_Products_Tags_Info" EntityType="caval_goModel.Store.cg_Products_Tags_Info" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="cg_Products_Tags_Map" EntityType="caval_goModel.Store.cg_Products_Tags_Map" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="cg_SitePhotos" EntityType="caval_goModel.Store.cg_SitePhotos" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="cg_Slideshows" EntityType="caval_goModel.Store.cg_Slideshows" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="cgvw_ProductActivityMap" EntityType="caval_goModel.Store.cgvw_ProductActivityMap" store:Type="Views" store:Schema="dbo" store:Name="cgvw_ProductActivityMap">
+            <DefiningQuery>SELECT 
+      [cgvw_ProductActivityMap].[ActivityId] AS [ActivityId], 
+      [cgvw_ProductActivityMap].[Name] AS [Name], 
+      [cgvw_ProductActivityMap].[ProductId] AS [ProductId], 
+      [cgvw_ProductActivityMap].[ActivitySelect] AS [ActivitySelect]
+      FROM [dbo].[cgvw_ProductActivityMap] AS [cgvw_ProductActivityMap]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="cgvw_ProductInfoLanguage" EntityType="caval_goModel.Store.cgvw_ProductInfoLanguage" store:Type="Views" store:Schema="dbo" store:Name="cgvw_ProductInfoLanguage">
+            <DefiningQuery>SELECT 
+      [cgvw_ProductInfoLanguage].[ProductInfoId] AS [ProductInfoId], 
+      [cgvw_ProductInfoLanguage].[ProductId] AS [ProductId], 
+      [cgvw_ProductInfoLanguage].[LanguageId] AS [LanguageId], 
+      [cgvw_ProductInfoLanguage].[Title] AS [Title], 
+      [cgvw_ProductInfoLanguage].[ShortDescription] AS [ShortDescription], 
+      [cgvw_ProductInfoLanguage].[Description] AS [Description], 
+      [cgvw_ProductInfoLanguage].[Status] AS [Status], 
+      [cgvw_ProductInfoLanguage].[LanguageName] AS [LanguageName], 
+      [cgvw_ProductInfoLanguage].[SystemLocale] AS [SystemLocale]
+      FROM [dbo].[cgvw_ProductInfoLanguage] AS [cgvw_ProductInfoLanguage]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="cgvw_ProductTagMap" EntityType="caval_goModel.Store.cgvw_ProductTagMap" store:Type="Views" store:Schema="dbo" store:Name="cgvw_ProductTagMap">
+            <DefiningQuery>SELECT 
+      [cgvw_ProductTagMap].[ProductTagId] AS [ProductTagId], 
+      [cgvw_ProductTagMap].[Tag] AS [Tag], 
+      [cgvw_ProductTagMap].[TagSelect] AS [TagSelect]
+      FROM [dbo].[cgvw_ProductTagMap] AS [cgvw_ProductTagMap]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_cg_Activities_Info_cg_Activities" Association="caval_goModel.Store.FK_cg_Activities_Info_cg_Activities">
+            <End Role="cg_Activities" EntitySet="cg_Activities" />
+            <End Role="cg_Activities_Info" EntitySet="cg_Activities_Info" />
+          </AssociationSet>
+          <AssociationSet Name="FK_cg_cms_Pages_Info_cg_cms_Pages" Association="caval_goModel.Store.FK_cg_cms_Pages_Info_cg_cms_Pages">
+            <End Role="cg_cms_Pages" EntitySet="cg_cms_Pages" />
+            <End Role="cg_cms_Pages_Info" EntitySet="cg_cms_Pages_Info" />
+          </AssociationSet>
+          <AssociationSet Name="FK_cg_cms_StaticBlocks_Info_cg_cms_StaticBlocks" Association="caval_goModel.Store.FK_cg_cms_StaticBlocks_Info_cg_cms_StaticBlocks">
+            <End Role="cg_cms_StaticBlocks" EntitySet="cg_cms_StaticBlocks" />
+            <End Role="cg_cms_StaticBlocks_Info" EntitySet="cg_cms_StaticBlocks_Info" />
+          </AssociationSet>
+          <AssociationSet Name="FK_cg_Destinations_Info_cg_Destinations" Association="caval_goModel.Store.FK_cg_Destinations_Info_cg_Destinations">
+            <End Role="cg_Destinations" EntitySet="cg_Destinations" />
+            <End Role="cg_Destinations_Info" EntitySet="cg_Destinations_Info" />
+          </AssociationSet>
+          <AssociationSet Name="FK_cg_LanguageTranslations_cg_Languages" Association="caval_goModel.Store.FK_cg_LanguageTranslations_cg_Languages">
+            <End Role="cg_Languages" EntitySet="cg_Languages" />
+            <End Role="cg_LanguageTranslations" EntitySet="cg_LanguageTranslations" />
+          </AssociationSet>
+          <AssociationSet Name="FK_cg_Products_Activities_Map_cg_Activities" Association="caval_goModel.Store.FK_cg_Products_Activities_Map_cg_Activities">
+            <End Role="cg_Activities" EntitySet="cg_Activities" />
+            <End Role="cg_Products_Activities_Map" EntitySet="cg_Products_Activities_Map" />
+          </AssociationSet>
+          <AssociationSet Name="FK_cg_Products_Activities_Map_cg_Products" Association="caval_goModel.Store.FK_cg_Products_Activities_Map_cg_Products">
+            <End Role="cg_Products" EntitySet="cg_Products" />
+            <End Role="cg_Products_Activities_Map" EntitySet="cg_Products_Activities_Map" />
+          </AssociationSet>
+          <AssociationSet Name="FK_cg_Products_cg_Destinations" Association="caval_goModel.Store.FK_cg_Products_cg_Destinations">
+            <End Role="cg_Destinations" EntitySet="cg_Destinations" />
+            <End Role="cg_Products" EntitySet="cg_Products" />
+          </AssociationSet>
+          <AssociationSet Name="FK_cg_Products_Dates_cg_Products" Association="caval_goModel.Store.FK_cg_Products_Dates_cg_Products">
+            <End Role="cg_Products" EntitySet="cg_Products" />
+            <End Role="cg_Products_Dates" EntitySet="cg_Products_Dates" />
+          </AssociationSet>
+          <AssociationSet Name="FK_cg_Products_Info_cg_Products" Association="caval_goModel.Store.FK_cg_Products_Info_cg_Products">
+            <End Role="cg_Products" EntitySet="cg_Products" />
+            <End Role="cg_Products_Info" EntitySet="cg_Products_Info" />
+          </AssociationSet>
+          <AssociationSet Name="FK_cg_Products_Info_Tabs_cg_Products_Info" Association="caval_goModel.Store.FK_cg_Products_Info_Tabs_cg_Products_Info">
+            <End Role="cg_Products_Info" EntitySet="cg_Products_Info" />
+            <End Role="cg_Products_Info_Tabs" EntitySet="cg_Products_Info_Tabs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_cg_Products_Photos_cg_Products" Association="caval_goModel.Store.FK_cg_Products_Photos_cg_Products">
+            <End Role="cg_Products" EntitySet="cg_Products" />
+            <End Role="cg_Products_Photos" EntitySet="cg_Products_Photos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_cg_Products_Tags_Info_cg_Products_Tags" Association="caval_goModel.Store.FK_cg_Products_Tags_Info_cg_Products_Tags">
+            <End Role="cg_Products_Tags" EntitySet="cg_Products_Tags" />
+            <End Role="cg_Products_Tags_Info" EntitySet="cg_Products_Tags_Info" />
+          </AssociationSet>
+          <AssociationSet Name="FK_cg_Products_Tags_Map_cg_Products" Association="caval_goModel.Store.FK_cg_Products_Tags_Map_cg_Products">
+            <End Role="cg_Products" EntitySet="cg_Products" />
+            <End Role="cg_Products_Tags_Map" EntitySet="cg_Products_Tags_Map" />
+          </AssociationSet>
+          <AssociationSet Name="FK_cg_Products_Tags_Map_cg_Products_Tags" Association="caval_goModel.Store.FK_cg_Products_Tags_Map_cg_Products_Tags">
+            <End Role="cg_Products_Tags" EntitySet="cg_Products_Tags" />
+            <End Role="cg_Products_Tags_Map" EntitySet="cg_Products_Tags_Map" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="cg_Activities">
+          <Key>
+            <PropertyRef Name="ActivityId" />
+          </Key>
+          <Property Name="ActivityId" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="varchar" MaxLength="150" />
+        </EntityType>
+        <EntityType Name="cg_Activities_Info">
+          <Key>
+            <PropertyRef Name="ActivityId" />
+            <PropertyRef Name="LanguageId" />
+          </Key>
+          <Property Name="ActivityInfoId" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ActivityId" Type="bigint" Nullable="false" />
+          <Property Name="LanguageId" Type="bigint" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="150" />
+          <Property Name="ShortDescription" Type="varchar" MaxLength="5000" />
+          <Property Name="Description" Type="varchar(max)" />
+          <Property Name="UrlCustomSegment" Type="varchar" MaxLength="150" />
+          <Property Name="MetaDescription" Type="varchar" MaxLength="250" />
+          <Property Name="MetaKeywords" Type="varchar" MaxLength="250" />
+          <Property Name="MetaTitle" Type="varchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="cg_cms_Pages">
+          <Key>
+            <PropertyRef Name="PageId" />
+          </Key>
+          <Property Name="PageId" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="varchar" MaxLength="150" />
+        </EntityType>
+        <EntityType Name="cg_cms_Pages_Info">
+          <Key>
+            <PropertyRef Name="CmsPageId" />
+            <PropertyRef Name="LanguageId" />
+          </Key>
+          <Property Name="CmsPageInfoId" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CmsPageId" Type="bigint" Nullable="false" />
+          <Property Name="LanguageId" Type="bigint" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="150" />
+          <Property Name="Tag_Title" Type="varchar" MaxLength="500" />
+          <Property Name="Tag_Keywords" Type="varchar" MaxLength="1000" />
+          <Property Name="Tag_Description" Type="varchar" MaxLength="1000" />
+          <Property Name="Code" Type="varchar(max)" />
+        </EntityType>
+        <EntityType Name="cg_cms_StaticBlocks">
+          <Key>
+            <PropertyRef Name="StaticBlockId" />
+          </Key>
+          <Property Name="StaticBlockId" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="varchar" MaxLength="150" />
+        </EntityType>
+        <EntityType Name="cg_cms_StaticBlocks_Info">
+          <Key>
+            <PropertyRef Name="StaticBlockId" />
+            <PropertyRef Name="LanguageId" />
+          </Key>
+          <Property Name="StaticBlockInfoId" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="StaticBlockId" Type="bigint" Nullable="false" />
+          <Property Name="LanguageId" Type="bigint" Nullable="false" />
+          <Property Name="Code" Type="varchar(max)" />
+        </EntityType>
+        <EntityType Name="cg_CustomerProfile">
+          <Key>
+            <PropertyRef Name="ProfileId" />
+          </Key>
+          <Property Name="ProfileId" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="256" />
+          <Property Name="FirstName" Type="varchar" MaxLength="150" />
+          <Property Name="LastName" Type="varchar" MaxLength="150" />
+          <Property Name="Email" Type="varchar" MaxLength="150" />
+        </EntityType>
+        <EntityType Name="cg_Destinations">
+          <Key>
+            <PropertyRef Name="DestinationId" />
+          </Key>
+          <Property Name="DestinationId" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="varchar" MaxLength="150" />
+          <Property Name="MapAddress" Type="varchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="cg_Destinations_Info">
+          <Key>
+            <PropertyRef Name="DestinationId" />
+            <PropertyRef Name="LanguageId" />
+          </Key>
+          <Property Name="DestinationInfoId" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="DestinationId" Type="bigint" Nullable="false" />
+          <Property Name="LanguageId" Type="bigint" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="150" />
+          <Property Name="ShortDescription" Type="varchar" MaxLength="5000" />
+          <Property Name="Description" Type="varchar(max)" />
+          <Property Name="UrlCustomSegment" Type="varchar" MaxLength="150" />
+          <Property Name="MetaDescription" Type="varchar" MaxLength="250" />
+          <Property Name="MetaKeywords" Type="varchar" MaxLength="250" />
+          <Property Name="MetaTitle" Type="varchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="cg_Languages">
+          <Key>
+            <PropertyRef Name="LanguageId" />
+          </Key>
+          <Property Name="LanguageId" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="varchar" MaxLength="150" />
+          <Property Name="SystemLocale" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="cg_LanguageTranslations">
+          <Key>
+            <PropertyRef Name="LanguageTranslationId" />
+          </Key>
+          <Property Name="LanguageTranslationId" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="LanguageId" Type="bigint" Nullable="false" />
+          <Property Name="Original" Type="varchar" Nullable="false" MaxLength="150" />
+          <Property Name="Translated" Type="varchar" Nullable="false" MaxLength="150" />
+        </EntityType>
+        <EntityType Name="cg_Products">
+          <Key>
+            <PropertyRef Name="ProductId" />
+          </Key>
+          <Property Name="ProductId" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="DestinationId" Type="bigint" />
+          <Property Name="Name" Type="varchar" MaxLength="150" />
+          <Property Name="ProductCode" Type="varchar" MaxLength="50" />
+          <Property Name="Price" Type="decimal" Scale="2" />
+          <Property Name="Status" Type="varchar" MaxLength="50" />
+          <Property Name="AllYearRound" Type="bit" />
+          <Property Name="Duration" Type="int" />
+        </EntityType>
+        <EntityType Name="cg_Products_Activities_Map">
+          <Key>
+            <PropertyRef Name="ProductActivityMapId" />
+          </Key>
+          <Property Name="ProductActivityMapId" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ProductId" Type="bigint" Nullable="false" />
+          <Property Name="ActivityId" Type="bigint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="cg_Products_Dates">
+          <Key>
+            <PropertyRef Name="ProductDateId" />
+          </Key>
+          <Property Name="ProductDateId" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ProductId" Type="bigint" />
+          <Property Name="DepartureDate" Type="datetime" Nullable="false" />
+          <Property Name="ReturnDate" Type="datetime" Nullable="false" />
+          <Property Name="MiniPersons" Type="int" Nullable="false" />
+          <Property Name="Note" Type="varchar" Nullable="false" MaxLength="1000" />
+          <Property Name="Price" Type="decimal" Nullable="false" Scale="2" />
+          <Property Name="FlightPrice" Type="decimal" Nullable="false" Scale="2" />
+        </EntityType>
+        <EntityType Name="cg_Products_Info">
+          <Key>
+            <PropertyRef Name="ProductId" />
+            <PropertyRef Name="LanguageId" />
+          </Key>
+          <Property Name="ProductInfoId" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ProductId" Type="bigint" Nullable="false" />
+          <Property Name="LanguageId" Type="bigint" Nullable="false" />
+          <Property Name="Title" Type="varchar" Nullable="false" MaxLength="250" />
+          <Property Name="ShortDescription" Type="varchar" Nullable="false" MaxLength="5000" />
+          <Property Name="Description" Type="varchar(max)" Nullable="false" />
+          <Property Name="Status" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="PricingInfo" Type="varchar" MaxLength="5000" />
+          <Property Name="ProductSummary" Type="varchar" MaxLength="5000" />
+          <Property Name="CustomField1" Type="varchar" MaxLength="5000" />
+          <Property Name="CustomField2" Type="varchar" MaxLength="5000" />
+          <Property Name="UrlCustomSegment" Type="varchar" MaxLength="150" />
+          <Property Name="MetaDescription" Type="varchar" MaxLength="250" />
+          <Property Name="MetaKeywords" Type="varchar" MaxLength="250" />
+          <Property Name="MetaTitle" Type="varchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="cg_Products_Info_Tabs">
+          <Key>
+            <PropertyRef Name="ProductInfoTabId" />
+          </Key>
+          <Property Name="ProductInfoTabId" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ProductId" Type="bigint" Nullable="false" />
+          <Property Name="LanguageId" Type="bigint" Nullable="false" />
+          <Property Name="TabTitle" Type="varchar" MaxLength="150" />
+          <Property Name="TabCode" Type="varchar(max)" />
+          <Property Name="ListOrder" Type="int" />
+        </EntityType>
+        <EntityType Name="cg_Products_Photos">
+          <Key>
+            <PropertyRef Name="ProductPhotoId" />
+          </Key>
+          <Property Name="ProductPhotoId" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ProductId" Type="bigint" Nullable="false" />
+          <Property Name="OriginalFileName" Type="varchar" MaxLength="150" />
+          <Property Name="FileExtension" Type="varchar" MaxLength="10" />
+          <Property Name="FileSize" Type="int" />
+          <Property Name="UploadDate" Type="datetime" />
+          <Property Name="Description" Type="varchar" MaxLength="5000" />
+          <Property Name="ListOrder" Type="int" />
+        </EntityType>
+        <EntityType Name="cg_Products_Tags">
+          <Key>
+            <PropertyRef Name="ProductTagId" />
+          </Key>
+          <Property Name="ProductTagId" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Tag" Type="varchar" MaxLength="150" />
+          <Property Name="Type" Type="varchar" MaxLength="50" />
+          <Property Name="Description" Type="varchar(max)" />
+          <Property Name="ListOrder" Type="int" />
+          <Property Name="EcludedCategories" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="cg_Products_Tags_Info">
+          <Key>
+            <PropertyRef Name="ProductTagId" />
+            <PropertyRef Name="LanguageId" />
+          </Key>
+          <Property Name="ProductTagInfoId" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ProductTagId" Type="bigint" Nullable="false" />
+          <Property Name="LanguageId" Type="bigint" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="150" />
+          <Property Name="Description" Type="varchar(max)" />
+          <Property Name="MetaDescription" Type="varchar" MaxLength="250" />
+          <Property Name="MetaKeywords" Type="varchar" MaxLength="250" />
+          <Property Name="MetaTitle" Type="varchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="cg_Products_Tags_Map">
+          <Key>
+            <PropertyRef Name="ProductId" />
+            <PropertyRef Name="ProductTagId" />
+          </Key>
+          <Property Name="ProductTagMapId" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ProductId" Type="bigint" Nullable="false" />
+          <Property Name="ProductTagId" Type="bigint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="cg_SitePhotos">
+          <Key>
+            <PropertyRef Name="SitePhotoId" />
+          </Key>
+          <Property Name="SitePhotoId" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="PhotoType" Type="varchar" MaxLength="50" />
+          <Property Name="ParentId" Type="bigint" />
+          <Property Name="OriginalFileName" Type="varchar" MaxLength="150" />
+          <Property Name="FileExtension" Type="varchar" MaxLength="10" />
+          <Property Name="FileSize" Type="int" />
+          <Property Name="UploadDate" Type="datetime" />
+          <Property Name="Description" Type="varchar" MaxLength="5000" />
+          <Property Name="ListOrder" Type="int" />
+          <Property Name="Link" Type="varchar" MaxLength="250" />
+          <Property Name="AlternativeText" Type="varchar" MaxLength="150" />
+        </EntityType>
+        <EntityType Name="cg_Slideshows">
+          <Key>
+            <PropertyRef Name="SlideshowId" />
+          </Key>
+          <Property Name="SlideshowId" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="SlideshowName" Type="varchar" Nullable="false" MaxLength="150" />
+          <Property Name="SlideshowKey" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="LanguageCode" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view '474975_cavalgo.dbo.cgvw_ProductActivityMap' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="cgvw_ProductActivityMap">
+          <Key>
+            <PropertyRef Name="ActivityId" />
+          </Key>
+          <Property Name="ActivityId" Type="bigint" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="150" />
+          <Property Name="ProductId" Type="bigint" />
+          <Property Name="ActivitySelect" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view '474975_cavalgo.dbo.cgvw_ProductInfoLanguage' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="cgvw_ProductInfoLanguage">
+          <Key>
+            <PropertyRef Name="ProductInfoId" />
+            <PropertyRef Name="ProductId" />
+            <PropertyRef Name="LanguageId" />
+            <PropertyRef Name="Title" />
+            <PropertyRef Name="ShortDescription" />
+            <PropertyRef Name="Description" />
+            <PropertyRef Name="Status" />
+          </Key>
+          <Property Name="ProductInfoId" Type="bigint" Nullable="false" />
+          <Property Name="ProductId" Type="bigint" Nullable="false" />
+          <Property Name="LanguageId" Type="bigint" Nullable="false" />
+          <Property Name="Title" Type="varchar" Nullable="false" MaxLength="250" />
+          <Property Name="ShortDescription" Type="varchar" Nullable="false" MaxLength="500" />
+          <Property Name="Description" Type="varchar" Nullable="false" MaxLength="5000" />
+          <Property Name="Status" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="LanguageName" Type="varchar" MaxLength="150" />
+          <Property Name="SystemLocale" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view '474975_cavalgo.dbo.cgvw_ProductTagMap' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="cgvw_ProductTagMap">
+          <Key>
+            <PropertyRef Name="ProductTagId" />
+          </Key>
+          <Property Name="ProductTagId" Type="bigint" Nullable="false" />
+          <Property Name="Tag" Type="varchar" MaxLength="150" />
+          <Property Name="TagSelect" Type="int" />
+        </EntityType>
+        <Association Name="FK_cg_Activities_Info_cg_Activities">
+          <End Role="cg_Activities" Type="caval_goModel.Store.cg_Activities" Multiplicity="1" />
+          <End Role="cg_Activities_Info" Type="caval_goModel.Store.cg_Activities_Info" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cg_Activities">
+              <PropertyRef Name="ActivityId" />
+            </Principal>
+            <Dependent Role="cg_Activities_Info">
+              <PropertyRef Name="ActivityId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_cg_cms_Pages_Info_cg_cms_Pages">
+          <End Role="cg_cms_Pages" Type="caval_goModel.Store.cg_cms_Pages" Multiplicity="1" />
+          <End Role="cg_cms_Pages_Info" Type="caval_goModel.Store.cg_cms_Pages_Info" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cg_cms_Pages">
+              <PropertyRef Name="PageId" />
+            </Principal>
+            <Dependent Role="cg_cms_Pages_Info">
+              <PropertyRef Name="CmsPageId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_cg_cms_StaticBlocks_Info_cg_cms_StaticBlocks">
+          <End Role="cg_cms_StaticBlocks" Type="caval_goModel.Store.cg_cms_StaticBlocks" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="cg_cms_StaticBlocks_Info" Type="caval_goModel.Store.cg_cms_StaticBlocks_Info" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cg_cms_StaticBlocks">
+              <PropertyRef Name="StaticBlockId" />
+            </Principal>
+            <Dependent Role="cg_cms_StaticBlocks_Info">
+              <PropertyRef Name="StaticBlockId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_cg_Destinations_Info_cg_Destinations">
+          <End Role="cg_Destinations" Type="caval_goModel.Store.cg_Destinations" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="cg_Destinations_Info" Type="caval_goModel.Store.cg_Destinations_Info" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cg_Destinations">
+              <PropertyRef Name="DestinationId" />
+            </Principal>
+            <Dependent Role="cg_Destinations_Info">
+              <PropertyRef Name="DestinationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_cg_LanguageTranslations_cg_Languages">
+          <End Role="cg_Languages" Type="caval_goModel.Store.cg_Languages" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="cg_LanguageTranslations" Type="caval_goModel.Store.cg_LanguageTranslations" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cg_Languages">
+              <PropertyRef Name="LanguageId" />
+            </Principal>
+            <Dependent Role="cg_LanguageTranslations">
+              <PropertyRef Name="LanguageId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_cg_Products_Activities_Map_cg_Activities">
+          <End Role="cg_Activities" Type="caval_goModel.Store.cg_Activities" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="cg_Products_Activities_Map" Type="caval_goModel.Store.cg_Products_Activities_Map" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cg_Activities">
+              <PropertyRef Name="ActivityId" />
+            </Principal>
+            <Dependent Role="cg_Products_Activities_Map">
+              <PropertyRef Name="ActivityId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_cg_Products_Activities_Map_cg_Products">
+          <End Role="cg_Products" Type="caval_goModel.Store.cg_Products" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="cg_Products_Activities_Map" Type="caval_goModel.Store.cg_Products_Activities_Map" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cg_Products">
+              <PropertyRef Name="ProductId" />
+            </Principal>
+            <Dependent Role="cg_Products_Activities_Map">
+              <PropertyRef Name="ProductId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_cg_Products_cg_Destinations">
+          <End Role="cg_Destinations" Type="caval_goModel.Store.cg_Destinations" Multiplicity="0..1" />
+          <End Role="cg_Products" Type="caval_goModel.Store.cg_Products" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cg_Destinations">
+              <PropertyRef Name="DestinationId" />
+            </Principal>
+            <Dependent Role="cg_Products">
+              <PropertyRef Name="DestinationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_cg_Products_Dates_cg_Products">
+          <End Role="cg_Products" Type="caval_goModel.Store.cg_Products" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="cg_Products_Dates" Type="caval_goModel.Store.cg_Products_Dates" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cg_Products">
+              <PropertyRef Name="ProductId" />
+            </Principal>
+            <Dependent Role="cg_Products_Dates">
+              <PropertyRef Name="ProductId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_cg_Products_Info_cg_Products">
+          <End Role="cg_Products" Type="caval_goModel.Store.cg_Products" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="cg_Products_Info" Type="caval_goModel.Store.cg_Products_Info" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cg_Products">
+              <PropertyRef Name="ProductId" />
+            </Principal>
+            <Dependent Role="cg_Products_Info">
+              <PropertyRef Name="ProductId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_cg_Products_Info_Tabs_cg_Products_Info">
+          <End Role="cg_Products_Info" Type="caval_goModel.Store.cg_Products_Info" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="cg_Products_Info_Tabs" Type="caval_goModel.Store.cg_Products_Info_Tabs" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cg_Products_Info">
+              <PropertyRef Name="ProductId" />
+              <PropertyRef Name="LanguageId" />
+            </Principal>
+            <Dependent Role="cg_Products_Info_Tabs">
+              <PropertyRef Name="ProductId" />
+              <PropertyRef Name="LanguageId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_cg_Products_Photos_cg_Products">
+          <End Role="cg_Products" Type="caval_goModel.Store.cg_Products" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="cg_Products_Photos" Type="caval_goModel.Store.cg_Products_Photos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cg_Products">
+              <PropertyRef Name="ProductId" />
+            </Principal>
+            <Dependent Role="cg_Products_Photos">
+              <PropertyRef Name="ProductId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_cg_Products_Tags_Info_cg_Products_Tags">
+          <End Role="cg_Products_Tags" Type="caval_goModel.Store.cg_Products_Tags" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="cg_Products_Tags_Info" Type="caval_goModel.Store.cg_Products_Tags_Info" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cg_Products_Tags">
+              <PropertyRef Name="ProductTagId" />
+            </Principal>
+            <Dependent Role="cg_Products_Tags_Info">
+              <PropertyRef Name="ProductTagId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_cg_Products_Tags_Map_cg_Products">
+          <End Role="cg_Products" Type="caval_goModel.Store.cg_Products" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="cg_Products_Tags_Map" Type="caval_goModel.Store.cg_Products_Tags_Map" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cg_Products">
+              <PropertyRef Name="ProductId" />
+            </Principal>
+            <Dependent Role="cg_Products_Tags_Map">
+              <PropertyRef Name="ProductId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_cg_Products_Tags_Map_cg_Products_Tags">
+          <End Role="cg_Products_Tags" Type="caval_goModel.Store.cg_Products_Tags" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="cg_Products_Tags_Map" Type="caval_goModel.Store.cg_Products_Tags_Map" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cg_Products_Tags">
+              <PropertyRef Name="ProductTagId" />
+            </Principal>
+            <Dependent Role="cg_Products_Tags_Map">
+              <PropertyRef Name="ProductTagId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="caval_goModel" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="caval_goEntities">
+          <EntitySet Name="cg_Activities_Info" EntityType="caval_goModel.cg_Activities_Info" />
+          <EntitySet Name="cg_cms_Pages" EntityType="caval_goModel.cg_cms_Pages" />
+          <EntitySet Name="cg_cms_Pages_Info" EntityType="caval_goModel.cg_cms_Pages_Info" />
+          <EntitySet Name="cg_cms_StaticBlocks" EntityType="caval_goModel.cg_cms_StaticBlocks" />
+          <EntitySet Name="cg_cms_StaticBlocks_Info" EntityType="caval_goModel.cg_cms_StaticBlocks_Info" />
+          <EntitySet Name="cg_CustomerProfile" EntityType="caval_goModel.cg_CustomerProfile" />
+          <EntitySet Name="cg_Languages" EntityType="caval_goModel.cg_Languages" />
+          <EntitySet Name="cg_LanguageTranslations" EntityType="caval_goModel.cg_LanguageTranslations" />
+          <EntitySet Name="cg_Products_Dates" EntityType="caval_goModel.cg_Products_Dates" />
+          <EntitySet Name="cg_Products_Info" EntityType="caval_goModel.cg_Products_Info" />
+          <EntitySet Name="cg_Products_Info_Tabs" EntityType="caval_goModel.cg_Products_Info_Tabs" />
+          <EntitySet Name="cg_Products_Photos" EntityType="caval_goModel.cg_Products_Photos" />
+          <EntitySet Name="cg_Products_Tags" EntityType="caval_goModel.cg_Products_Tags" />
+          <EntitySet Name="cg_Products_Tags_Info" EntityType="caval_goModel.cg_Products_Tags_Info" />
+          <EntitySet Name="cgvw_ProductInfoLanguage" EntityType="caval_goModel.cgvw_ProductInfoLanguage" />
+          <EntitySet Name="cgvw_ProductTagMap" EntityType="caval_goModel.cgvw_ProductTagMap" />
+          <AssociationSet Name="FK_cg_cms_Pages_Info_cg_cms_Pages" Association="caval_goModel.FK_cg_cms_Pages_Info_cg_cms_Pages">
+            <End Role="cg_cms_Pages" EntitySet="cg_cms_Pages" />
+            <End Role="cg_cms_Pages_Info" EntitySet="cg_cms_Pages_Info" />
+          </AssociationSet>
+          <AssociationSet Name="FK_cg_cms_StaticBlocks_Info_cg_cms_StaticBlocks" Association="caval_goModel.FK_cg_cms_StaticBlocks_Info_cg_cms_StaticBlocks">
+            <End Role="cg_cms_StaticBlocks" EntitySet="cg_cms_StaticBlocks" />
+            <End Role="cg_cms_StaticBlocks_Info" EntitySet="cg_cms_StaticBlocks_Info" />
+          </AssociationSet>
+          <AssociationSet Name="FK_cg_LanguageTranslations_cg_Languages" Association="caval_goModel.FK_cg_LanguageTranslations_cg_Languages">
+            <End Role="cg_Languages" EntitySet="cg_Languages" />
+            <End Role="cg_LanguageTranslations" EntitySet="cg_LanguageTranslations" />
+          </AssociationSet>
+          <AssociationSet Name="FK_cg_Products_Info_Tabs_cg_Products_Info" Association="caval_goModel.FK_cg_Products_Info_Tabs_cg_Products_Info">
+            <End Role="cg_Products_Info" EntitySet="cg_Products_Info" />
+            <End Role="cg_Products_Info_Tabs" EntitySet="cg_Products_Info_Tabs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_cg_Products_Tags_Info_cg_Products_Tags" Association="caval_goModel.FK_cg_Products_Tags_Info_cg_Products_Tags">
+            <End Role="cg_Products_Tags" EntitySet="cg_Products_Tags" />
+            <End Role="cg_Products_Tags_Info" EntitySet="cg_Products_Tags_Info" />
+          </AssociationSet>
+          <EntitySet Name="cg_Products_Tags_Map" EntityType="caval_goModel.cg_Products_Tags_Map" />
+          <AssociationSet Name="FK_cg_Products_Tags_Map_cg_Products_Tags" Association="caval_goModel.FK_cg_Products_Tags_Map_cg_Products_Tags">
+            <End Role="cg_Products_Tags" EntitySet="cg_Products_Tags" />
+            <End Role="cg_Products_Tags_Map" EntitySet="cg_Products_Tags_Map" />
+          </AssociationSet>
+          <EntitySet Name="cg_SitePhotos" EntityType="caval_goModel.cg_SitePhotos" />
+          <EntitySet Name="cg_Activities" EntityType="caval_goModel.cg_Activities" />
+          <EntitySet Name="cg_Products" EntityType="caval_goModel.cg_Products" />
+          <EntitySet Name="cg_Products_Activities_Map" EntityType="caval_goModel.cg_Products_Activities_Map" />
+          <AssociationSet Name="FK_cg_Activities_Info_cg_Activities" Association="caval_goModel.FK_cg_Activities_Info_cg_Activities">
+            <End Role="cg_Activities" EntitySet="cg_Activities" />
+            <End Role="cg_Activities_Info" EntitySet="cg_Activities_Info" />
+          </AssociationSet>
+          <AssociationSet Name="FK_cg_Products_Activities_Map_cg_Activities" Association="caval_goModel.FK_cg_Products_Activities_Map_cg_Activities">
+            <End Role="cg_Activities" EntitySet="cg_Activities" />
+            <End Role="cg_Products_Activities_Map" EntitySet="cg_Products_Activities_Map" />
+          </AssociationSet>
+          <AssociationSet Name="FK_cg_Products_Activities_Map_cg_Products" Association="caval_goModel.FK_cg_Products_Activities_Map_cg_Products">
+            <End Role="cg_Products" EntitySet="cg_Products" />
+            <End Role="cg_Products_Activities_Map" EntitySet="cg_Products_Activities_Map" />
+          </AssociationSet>
+          <AssociationSet Name="FK_cg_Products_Dates_cg_Products" Association="caval_goModel.FK_cg_Products_Dates_cg_Products">
+            <End Role="cg_Products" EntitySet="cg_Products" />
+            <End Role="cg_Products_Dates" EntitySet="cg_Products_Dates" />
+          </AssociationSet>
+          <AssociationSet Name="FK_cg_Products_Info_cg_Products" Association="caval_goModel.FK_cg_Products_Info_cg_Products">
+            <End Role="cg_Products" EntitySet="cg_Products" />
+            <End Role="cg_Products_Info" EntitySet="cg_Products_Info" />
+          </AssociationSet>
+          <AssociationSet Name="FK_cg_Products_Photos_cg_Products" Association="caval_goModel.FK_cg_Products_Photos_cg_Products">
+            <End Role="cg_Products" EntitySet="cg_Products" />
+            <End Role="cg_Products_Photos" EntitySet="cg_Products_Photos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_cg_Products_Tags_Map_cg_Products" Association="caval_goModel.FK_cg_Products_Tags_Map_cg_Products">
+            <End Role="cg_Products" EntitySet="cg_Products" />
+            <End Role="cg_Products_Tags_Map" EntitySet="cg_Products_Tags_Map" />
+          </AssociationSet>
+          <EntitySet Name="cgvw_ProductActivityMap" EntityType="caval_goModel.cgvw_ProductActivityMap" />
+          <EntitySet Name="cg_Slideshows" EntityType="caval_goModel.cg_Slideshows" />
+          <EntitySet Name="cg_Destinations_Info" EntityType="caval_goModel.cg_Destinations_Info" />
+          <EntitySet Name="cg_Destinations" EntityType="caval_goModel.cg_Destinations" />
+          <AssociationSet Name="FK_cg_Destinations_Info_cg_Destinations" Association="caval_goModel.FK_cg_Destinations_Info_cg_Destinations">
+            <End Role="cg_Destinations" EntitySet="cg_Destinations" />
+            <End Role="cg_Destinations_Info" EntitySet="cg_Destinations_Info" />
+          </AssociationSet>
+          <AssociationSet Name="FK_cg_Products_cg_Destinations" Association="caval_goModel.FK_cg_Products_cg_Destinations">
+            <End Role="cg_Destinations" EntitySet="cg_Destinations" />
+            <End Role="cg_Products" EntitySet="cg_Products" />
+          </AssociationSet>
+          </EntityContainer>
+        <EntityType Name="cg_Activities_Info">
+          <Key>
+            <PropertyRef Name="ActivityId" />
+            <PropertyRef Name="LanguageId" />
+          </Key>
+          <Property Name="ActivityInfoId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Name="ActivityId" Type="Int64" Nullable="false" />
+          <Property Name="LanguageId" Type="Int64" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="150" Unicode="false" FixedLength="false" />
+          <Property Name="ShortDescription" Type="String" MaxLength="1000" Unicode="false" FixedLength="false" />
+          <Property Name="Description" Type="String" MaxLength="5000" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="cg_Activities" Relationship="caval_goModel.FK_cg_Activities_Info_cg_Activities" FromRole="cg_Activities_Info" ToRole="cg_Activities" />
+          <Property Type="String" Name="UrlCustomSegment" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="MetaDescription" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="MetaKeywords" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="MetaTitle" MaxLength="250" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="cg_cms_Pages">
+          <Key>
+            <PropertyRef Name="PageId" />
+          </Key>
+          <Property Name="PageId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Name="Name" Type="String" MaxLength="150" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="cg_cms_Pages_Info" Relationship="caval_goModel.FK_cg_cms_Pages_Info_cg_cms_Pages" FromRole="cg_cms_Pages" ToRole="cg_cms_Pages_Info" />
+        </EntityType>
+        <EntityType Name="cg_cms_Pages_Info">
+          <Key>
+            <PropertyRef Name="CmsPageId" />
+            <PropertyRef Name="LanguageId" />
+          </Key>
+          <Property Name="CmsPageInfoId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Name="CmsPageId" Type="Int64" Nullable="false" />
+          <Property Name="LanguageId" Type="Int64" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="150" Unicode="false" FixedLength="false" />
+          <Property Name="Tag_Title" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+          <Property Name="Tag_Keywords" Type="String" MaxLength="1000" Unicode="false" FixedLength="false" />
+          <Property Name="Tag_Description" Type="String" MaxLength="1000" Unicode="false" FixedLength="false" />
+          <Property Name="Code" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="cg_cms_Pages" Relationship="caval_goModel.FK_cg_cms_Pages_Info_cg_cms_Pages" FromRole="cg_cms_Pages_Info" ToRole="cg_cms_Pages" />
+        </EntityType>
+        <EntityType Name="cg_cms_StaticBlocks">
+          <Key>
+            <PropertyRef Name="StaticBlockId" />
+          </Key>
+          <Property Name="StaticBlockId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Name="Name" Type="String" MaxLength="150" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="cg_cms_StaticBlocks_Info" Relationship="caval_goModel.FK_cg_cms_StaticBlocks_Info_cg_cms_StaticBlocks" FromRole="cg_cms_StaticBlocks" ToRole="cg_cms_StaticBlocks_Info" />
+        </EntityType>
+        <EntityType Name="cg_cms_StaticBlocks_Info">
+          <Key>
+            <PropertyRef Name="StaticBlockId" />
+            <PropertyRef Name="LanguageId" />
+          </Key>
+          <Property Name="StaticBlockInfoId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Name="StaticBlockId" Type="Int64" Nullable="false" />
+          <Property Name="LanguageId" Type="Int64" Nullable="false" />
+          <Property Name="Code" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="cg_cms_StaticBlocks" Relationship="caval_goModel.FK_cg_cms_StaticBlocks_Info_cg_cms_StaticBlocks" FromRole="cg_cms_StaticBlocks_Info" ToRole="cg_cms_StaticBlocks" />
+        </EntityType>
+        <EntityType Name="cg_CustomerProfile">
+          <Key>
+            <PropertyRef Name="ProfileId" />
+          </Key>
+          <Property Name="ProfileId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Name="UserName" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
+          <Property Name="FirstName" Type="String" MaxLength="150" Unicode="false" FixedLength="false" />
+          <Property Name="LastName" Type="String" MaxLength="150" Unicode="false" FixedLength="false" />
+          <Property Name="Email" Type="String" MaxLength="150" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="cg_Languages">
+          <Key>
+            <PropertyRef Name="LanguageId" />
+          </Key>
+          <Property Name="LanguageId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Name="Name" Type="String" MaxLength="150" Unicode="false" FixedLength="false" />
+          <Property Name="SystemLocale" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="cg_LanguageTranslations" Relationship="caval_goModel.FK_cg_LanguageTranslations_cg_Languages" FromRole="cg_Languages" ToRole="cg_LanguageTranslations" />
+        </EntityType>
+        <EntityType Name="cg_LanguageTranslations">
+          <Key>
+            <PropertyRef Name="LanguageTranslationId" />
+          </Key>
+          <Property Name="LanguageTranslationId" Type="Int64" Nullable="false" />
+          <Property Name="Original" Type="String" Nullable="false" MaxLength="150" Unicode="false" FixedLength="false" />
+          <Property Name="Translated" Type="String" Nullable="false" MaxLength="150" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="cg_Languages" Relationship="caval_goModel.FK_cg_LanguageTranslations_cg_Languages" FromRole="cg_LanguageTranslations" ToRole="cg_Languages" />
+        </EntityType>
+        <EntityType Name="cg_Products_Dates">
+          <Key>
+            <PropertyRef Name="ProductDateId" />
+          </Key>
+          <Property Name="ProductDateId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Name="DepartureDate" Type="DateTime" Nullable="false" />
+          <Property Name="ReturnDate" Type="DateTime" Nullable="false" />
+          <Property Name="MiniPersons" Type="Int32" Nullable="false" />
+          <Property Name="Note" Type="String" Nullable="false" MaxLength="1000" Unicode="false" FixedLength="false" />
+          <Property Name="Price" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="FlightPrice" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <NavigationProperty Name="cg_Products" Relationship="caval_goModel.FK_cg_Products_Dates_cg_Products" FromRole="cg_Products_Dates" ToRole="cg_Products" />
+        </EntityType>
+        <EntityType Name="cg_Products_Info">
+          <Key>
+            <PropertyRef Name="ProductId" />
+            <PropertyRef Name="LanguageId" />
+          </Key>
+          <Property Name="ProductInfoId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Name="ProductId" Type="Int64" Nullable="false" />
+          <Property Name="LanguageId" Type="Int64" Nullable="false" />
+          <Property Name="Title" Type="String" Nullable="false" MaxLength="250" Unicode="false" FixedLength="false" />
+          <Property Name="ShortDescription" Type="String" Nullable="false" MaxLength="500" Unicode="false" FixedLength="false" />
+          <Property Name="Description" Type="String" Nullable="false" MaxLength="5000" Unicode="false" FixedLength="false" />
+          <Property Name="Status" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="cg_Products_Info_Tabs" Relationship="caval_goModel.FK_cg_Products_Info_Tabs_cg_Products_Info" FromRole="cg_Products_Info" ToRole="cg_Products_Info_Tabs" />
+          <NavigationProperty Name="cg_Products" Relationship="caval_goModel.FK_cg_Products_Info_cg_Products" FromRole="cg_Products_Info" ToRole="cg_Products" />
+          <Property Type="String" Name="PricingInfo" MaxLength="5000" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ProductSummary" MaxLength="5000" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="CustomField1" MaxLength="5000" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="CustomField2" MaxLength="5000" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="UrlCustomSegment" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="MetaDescription" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="MetaKeywords" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="MetaTitle" MaxLength="250" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="cg_Products_Info_Tabs">
+          <Key>
+            <PropertyRef Name="ProductInfoTabId" />
+          </Key>
+          <Property Name="ProductInfoTabId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Name="TabTitle" Type="String" MaxLength="150" Unicode="false" FixedLength="false" />
+          <Property Name="TabCode" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="ListOrder" Type="Int32" />
+          <NavigationProperty Name="cg_Products_Info" Relationship="caval_goModel.FK_cg_Products_Info_Tabs_cg_Products_Info" FromRole="cg_Products_Info_Tabs" ToRole="cg_Products_Info" />
+        </EntityType>
+        <EntityType Name="cg_Products_Photos">
+          <Key>
+            <PropertyRef Name="ProductPhotoId" />
+          </Key>
+          <Property Name="ProductPhotoId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Name="OriginalFileName" Type="String" MaxLength="150" Unicode="false" FixedLength="false" />
+          <Property Name="FileExtension" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="FileSize" Type="Int32" />
+          <Property Name="UploadDate" Type="DateTime" />
+          <Property Name="Description" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+          <Property Name="ListOrder" Type="Int32" />
+          <NavigationProperty Name="cg_Products" Relationship="caval_goModel.FK_cg_Products_Photos_cg_Products" FromRole="cg_Products_Photos" ToRole="cg_Products" />
+        </EntityType>
+        <EntityType Name="cg_Products_Tags">
+          <Key>
+            <PropertyRef Name="ProductTagId" />
+          </Key>
+          <Property Name="ProductTagId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Name="Tag" Type="String" MaxLength="150" Unicode="false" FixedLength="false" />
+          <Property Name="Type" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Description" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="cg_Products_Tags_Info" Relationship="caval_goModel.FK_cg_Products_Tags_Info_cg_Products_Tags" FromRole="cg_Products_Tags" ToRole="cg_Products_Tags_Info" />
+          <NavigationProperty Name="cg_Products_Tags_Map" Relationship="caval_goModel.FK_cg_Products_Tags_Map_cg_Products_Tags" FromRole="cg_Products_Tags" ToRole="cg_Products_Tags_Map" />
+          <Property Type="Int32" Name="ListOrder" />
+          <Property Type="String" Name="EcludedCategories" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="cg_Products_Tags_Info">
+          <Key>
+            <PropertyRef Name="ProductTagId" />
+            <PropertyRef Name="LanguageId" />
+          </Key>
+          <Property Name="ProductTagInfoId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Name="ProductTagId" Type="Int64" Nullable="false" />
+          <Property Name="LanguageId" Type="Int64" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="150" Unicode="false" FixedLength="false" />
+          <Property Name="Description" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="cg_Products_Tags" Relationship="caval_goModel.FK_cg_Products_Tags_Info_cg_Products_Tags" FromRole="cg_Products_Tags_Info" ToRole="cg_Products_Tags" />
+          <Property Type="String" Name="MetaDescription" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="MetaKeywords" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="MetaTitle" MaxLength="250" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="cgvw_ProductInfoLanguage">
+          <Key>
+            <PropertyRef Name="ProductInfoId" />
+            <PropertyRef Name="ProductId" />
+            <PropertyRef Name="LanguageId" />
+            <PropertyRef Name="Title" />
+            <PropertyRef Name="ShortDescription" />
+            <PropertyRef Name="Description" />
+            <PropertyRef Name="Status" />
+          </Key>
+          <Property Name="ProductInfoId" Type="Int64" Nullable="false" />
+          <Property Name="ProductId" Type="Int64" Nullable="false" />
+          <Property Name="LanguageId" Type="Int64" Nullable="false" />
+          <Property Name="Title" Type="String" Nullable="false" MaxLength="250" Unicode="false" FixedLength="false" />
+          <Property Name="ShortDescription" Type="String" Nullable="false" MaxLength="500" Unicode="false" FixedLength="false" />
+          <Property Name="Description" Type="String" Nullable="false" MaxLength="5000" Unicode="false" FixedLength="false" />
+          <Property Name="Status" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="LanguageName" Type="String" MaxLength="150" Unicode="false" FixedLength="false" />
+          <Property Name="SystemLocale" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="cgvw_ProductTagMap">
+          <Key>
+            <PropertyRef Name="ProductTagId" />
+          </Key>
+          <Property Name="ProductTagId" Type="Int64" Nullable="false" />
+          <Property Name="Tag" Type="String" MaxLength="150" Unicode="false" FixedLength="false" />
+          <Property Name="TagSelect" Type="Int32" />
+        </EntityType>
+        <Association Name="FK_cg_cms_Pages_Info_cg_cms_Pages">
+          <End Role="cg_cms_Pages" Type="caval_goModel.cg_cms_Pages" Multiplicity="1" />
+          <End Role="cg_cms_Pages_Info" Type="caval_goModel.cg_cms_Pages_Info" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cg_cms_Pages">
+              <PropertyRef Name="PageId" />
+            </Principal>
+            <Dependent Role="cg_cms_Pages_Info">
+              <PropertyRef Name="CmsPageId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_cg_cms_StaticBlocks_Info_cg_cms_StaticBlocks">
+          <End Role="cg_cms_StaticBlocks" Type="caval_goModel.cg_cms_StaticBlocks" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="cg_cms_StaticBlocks_Info" Type="caval_goModel.cg_cms_StaticBlocks_Info" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cg_cms_StaticBlocks">
+              <PropertyRef Name="StaticBlockId" />
+            </Principal>
+            <Dependent Role="cg_cms_StaticBlocks_Info">
+              <PropertyRef Name="StaticBlockId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_cg_LanguageTranslations_cg_Languages">
+          <End Role="cg_Languages" Type="caval_goModel.cg_Languages" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="cg_LanguageTranslations" Type="caval_goModel.cg_LanguageTranslations" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_cg_Products_Info_Tabs_cg_Products_Info">
+          <End Role="cg_Products_Info" Type="caval_goModel.cg_Products_Info" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="cg_Products_Info_Tabs" Type="caval_goModel.cg_Products_Info_Tabs" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_cg_Products_Tags_Info_cg_Products_Tags">
+          <End Role="cg_Products_Tags" Type="caval_goModel.cg_Products_Tags" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="cg_Products_Tags_Info" Type="caval_goModel.cg_Products_Tags_Info" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cg_Products_Tags">
+              <PropertyRef Name="ProductTagId" />
+            </Principal>
+            <Dependent Role="cg_Products_Tags_Info">
+              <PropertyRef Name="ProductTagId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="cg_Products_Tags_Map">
+          <Key>
+            <PropertyRef Name="ProductId" />
+            <PropertyRef Name="ProductTagId" />
+          </Key>
+          <Property Type="Int64" Name="ProductTagMapId" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="Int64" Name="ProductId" Nullable="false" />
+          <Property Type="Int64" Name="ProductTagId" Nullable="false" />
+          <NavigationProperty Name="cg_Products_Tags" Relationship="caval_goModel.FK_cg_Products_Tags_Map_cg_Products_Tags" FromRole="cg_Products_Tags_Map" ToRole="cg_Products_Tags" />
+          <NavigationProperty Name="cg_Products" Relationship="caval_goModel.FK_cg_Products_Tags_Map_cg_Products" FromRole="cg_Products_Tags_Map" ToRole="cg_Products" />
+        </EntityType>
+        <Association Name="FK_cg_Products_Tags_Map_cg_Products_Tags">
+          <End Type="caval_goModel.cg_Products_Tags" Role="cg_Products_Tags" Multiplicity="1" />
+          <End Type="caval_goModel.cg_Products_Tags_Map" Role="cg_Products_Tags_Map" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cg_Products_Tags">
+              <PropertyRef Name="ProductTagId" />
+            </Principal>
+            <Dependent Role="cg_Products_Tags_Map">
+              <PropertyRef Name="ProductTagId" />
+            </Dependent>
+          </ReferentialConstraint>
+          
+        </Association>
+        <EntityType Name="cg_SitePhotos">
+          <Key>
+            <PropertyRef Name="SitePhotoId" />
+          </Key>
+          <Property Type="Int64" Name="SitePhotoId" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="String" Name="PhotoType" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Int64" Name="ParentId" />
+          <Property Type="String" Name="OriginalFileName" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="FileExtension" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="FileSize" />
+          <Property Type="DateTime" Name="UploadDate" />
+          <Property Type="String" Name="Description" MaxLength="5000" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="ListOrder" />
+          <Property Type="String" Name="Link" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="AlternativeText" MaxLength="150" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="cg_Activities">
+          <Key>
+            <PropertyRef Name="ActivityId" />
+          </Key>
+          <Property Type="Int64" Name="ActivityId" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="String" Name="Name" MaxLength="150" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="cg_Activities_Info" Relationship="caval_goModel.FK_cg_Activities_Info_cg_Activities" FromRole="cg_Activities" ToRole="cg_Activities_Info" />
+          <NavigationProperty Name="cg_Products_Activities_Map" Relationship="caval_goModel.FK_cg_Products_Activities_Map_cg_Activities" FromRole="cg_Activities" ToRole="cg_Products_Activities_Map" />
+        </EntityType>
+        <EntityType Name="cg_Products">
+          <Key>
+            <PropertyRef Name="ProductId" />
+          </Key>
+          <Property Type="Int64" Name="ProductId" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="String" Name="Name" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ProductCode" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Decimal" Name="Price" Precision="18" Scale="2" />
+          <Property Type="String" Name="Status" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="cg_Products_Activities_Map" Relationship="caval_goModel.FK_cg_Products_Activities_Map_cg_Products" FromRole="cg_Products" ToRole="cg_Products_Activities_Map" />
+          <NavigationProperty Name="cg_Products_Dates" Relationship="caval_goModel.FK_cg_Products_Dates_cg_Products" FromRole="cg_Products" ToRole="cg_Products_Dates" />
+          <NavigationProperty Name="cg_Products_Info" Relationship="caval_goModel.FK_cg_Products_Info_cg_Products" FromRole="cg_Products" ToRole="cg_Products_Info" />
+          <NavigationProperty Name="cg_Products_Photos" Relationship="caval_goModel.FK_cg_Products_Photos_cg_Products" FromRole="cg_Products" ToRole="cg_Products_Photos" />
+          <NavigationProperty Name="cg_Products_Tags_Map" Relationship="caval_goModel.FK_cg_Products_Tags_Map_cg_Products" FromRole="cg_Products" ToRole="cg_Products_Tags_Map" />
+          <Property Type="Boolean" Name="AllYearRound" />
+          <Property Type="Int32" Name="Duration" />
+          <NavigationProperty Name="cg_Destinations" Relationship="caval_goModel.FK_cg_Products_cg_Destinations" FromRole="cg_Products" ToRole="cg_Destinations" />
+        </EntityType>
+        <EntityType Name="cg_Products_Activities_Map">
+          <Key>
+            <PropertyRef Name="ProductActivityMapId" />
+          </Key>
+          <Property Type="Int64" Name="ProductActivityMapId" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <NavigationProperty Name="cg_Activities" Relationship="caval_goModel.FK_cg_Products_Activities_Map_cg_Activities" FromRole="cg_Products_Activities_Map" ToRole="cg_Activities" />
+          <NavigationProperty Name="cg_Products" Relationship="caval_goModel.FK_cg_Products_Activities_Map_cg_Products" FromRole="cg_Products_Activities_Map" ToRole="cg_Products" />
+        </EntityType>
+        <Association Name="FK_cg_Activities_Info_cg_Activities">
+          <End Type="caval_goModel.cg_Activities" Role="cg_Activities" Multiplicity="1" />
+          <End Type="caval_goModel.cg_Activities_Info" Role="cg_Activities_Info" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cg_Activities">
+              <PropertyRef Name="ActivityId" />
+            </Principal>
+            <Dependent Role="cg_Activities_Info">
+              <PropertyRef Name="ActivityId" />
+            </Dependent>
+          </ReferentialConstraint>
+          
+        </Association>
+        <Association Name="FK_cg_Products_Activities_Map_cg_Activities">
+          <End Type="caval_goModel.cg_Activities" Role="cg_Activities" Multiplicity="1" />
+          <End Type="caval_goModel.cg_Products_Activities_Map" Role="cg_Products_Activities_Map" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_cg_Products_Activities_Map_cg_Products">
+          <End Type="caval_goModel.cg_Products" Role="cg_Products" Multiplicity="1" />
+          <End Type="caval_goModel.cg_Products_Activities_Map" Role="cg_Products_Activities_Map" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_cg_Products_Dates_cg_Products">
+          <End Type="caval_goModel.cg_Products" Role="cg_Products" Multiplicity="0..1" />
+          <End Type="caval_goModel.cg_Products_Dates" Role="cg_Products_Dates" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_cg_Products_Info_cg_Products">
+          <End Type="caval_goModel.cg_Products" Role="cg_Products" Multiplicity="1" />
+          <End Type="caval_goModel.cg_Products_Info" Role="cg_Products_Info" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cg_Products">
+              <PropertyRef Name="ProductId" />
+            </Principal>
+            <Dependent Role="cg_Products_Info">
+              <PropertyRef Name="ProductId" />
+            </Dependent>
+          </ReferentialConstraint>
+          
+        </Association>
+        <Association Name="FK_cg_Products_Photos_cg_Products">
+          <End Type="caval_goModel.cg_Products" Role="cg_Products" Multiplicity="1" />
+          <End Type="caval_goModel.cg_Products_Photos" Role="cg_Products_Photos" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_cg_Products_Tags_Map_cg_Products">
+          <End Type="caval_goModel.cg_Products" Role="cg_Products" Multiplicity="1" />
+          <End Type="caval_goModel.cg_Products_Tags_Map" Role="cg_Products_Tags_Map" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cg_Products">
+              <PropertyRef Name="ProductId" />
+            </Principal>
+            <Dependent Role="cg_Products_Tags_Map">
+              <PropertyRef Name="ProductId" />
+            </Dependent>
+          </ReferentialConstraint>
+          
+        </Association>
+        <EntityType Name="cgvw_ProductActivityMap">
+          <Key>
+            <PropertyRef Name="ActivityId" />
+          </Key>
+          <Property Type="Int64" Name="ActivityId" Nullable="false" />
+          <Property Type="String" Name="Name" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Type="Int64" Name="ProductId" />
+          <Property Type="Int32" Name="ActivitySelect" />
+        </EntityType>
+        <EntityType Name="cg_Slideshows">
+          <Key>
+            <PropertyRef Name="SlideshowId" />
+          </Key>
+          <Property Type="Int64" Name="SlideshowId" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="String" Name="SlideshowName" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="SlideshowKey" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="LanguageCode" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="cg_Destinations_Info">
+          <Key>
+            <PropertyRef Name="DestinationId" />
+            <PropertyRef Name="LanguageId" />
+          </Key>
+          <Property Type="Int64" Name="DestinationInfoId" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="Int64" Name="DestinationId" Nullable="false" />
+          <Property Type="Int64" Name="LanguageId" Nullable="false" />
+          <Property Type="String" Name="Name" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ShortDescription" MaxLength="5000" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Description" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="UrlCustomSegment" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="MetaDescription" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="MetaKeywords" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="MetaTitle" MaxLength="250" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="cg_Destinations" Relationship="caval_goModel.FK_cg_Destinations_Info_cg_Destinations" FromRole="cg_Destinations_Info" ToRole="cg_Destinations" />
+        </EntityType>
+        <EntityType Name="cg_Destinations">
+          <Key>
+            <PropertyRef Name="DestinationId" />
+          </Key>
+          <Property Type="Int64" Name="DestinationId" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="String" Name="Name" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="MapAddress" MaxLength="250" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="cg_Destinations_Info" Relationship="caval_goModel.FK_cg_Destinations_Info_cg_Destinations" FromRole="cg_Destinations" ToRole="cg_Destinations_Info" />
+          <NavigationProperty Name="cg_Products" Relationship="caval_goModel.FK_cg_Products_cg_Destinations" FromRole="cg_Destinations" ToRole="cg_Products" />
+        </EntityType>
+        <Association Name="FK_cg_Destinations_Info_cg_Destinations">
+          <End Type="caval_goModel.cg_Destinations" Role="cg_Destinations" Multiplicity="1" />
+          <End Type="caval_goModel.cg_Destinations_Info" Role="cg_Destinations_Info" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cg_Destinations">
+              <PropertyRef Name="DestinationId" />
+            </Principal>
+            <Dependent Role="cg_Destinations_Info">
+              <PropertyRef Name="DestinationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_cg_Products_cg_Destinations">
+          <End Type="caval_goModel.cg_Destinations" Role="cg_Destinations" Multiplicity="0..1" />
+          <End Type="caval_goModel.cg_Products" Role="cg_Products" Multiplicity="*" />
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="caval_goModelStoreContainer" CdmEntityContainer="caval_goEntities">
+          <EntitySetMapping Name="cg_Activities_Info"><EntityTypeMapping TypeName="caval_goModel.cg_Activities_Info"><MappingFragment StoreEntitySet="cg_Activities_Info">
+            <ScalarProperty Name="MetaTitle" ColumnName="MetaTitle" />
+                <ScalarProperty Name="MetaKeywords" ColumnName="MetaKeywords" />
+                <ScalarProperty Name="MetaDescription" ColumnName="MetaDescription" />
+                <ScalarProperty Name="UrlCustomSegment" ColumnName="UrlCustomSegment" />
+                <ScalarProperty Name="ActivityInfoId" ColumnName="ActivityInfoId" />
+            <ScalarProperty Name="ActivityId" ColumnName="ActivityId" />
+            <ScalarProperty Name="LanguageId" ColumnName="LanguageId" />
+            <ScalarProperty Name="Name" ColumnName="Name" />
+            <ScalarProperty Name="ShortDescription" ColumnName="ShortDescription" />
+            <ScalarProperty Name="Description" ColumnName="Description" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="cg_cms_Pages"><EntityTypeMapping TypeName="caval_goModel.cg_cms_Pages"><MappingFragment StoreEntitySet="cg_cms_Pages">
+            <ScalarProperty Name="PageId" ColumnName="PageId" />
+            <ScalarProperty Name="Name" ColumnName="Name" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="cg_cms_Pages_Info"><EntityTypeMapping TypeName="caval_goModel.cg_cms_Pages_Info"><MappingFragment StoreEntitySet="cg_cms_Pages_Info">
+            <ScalarProperty Name="CmsPageInfoId" ColumnName="CmsPageInfoId" />
+            <ScalarProperty Name="CmsPageId" ColumnName="CmsPageId" />
+            <ScalarProperty Name="LanguageId" ColumnName="LanguageId" />
+            <ScalarProperty Name="Name" ColumnName="Name" />
+            <ScalarProperty Name="Tag_Title" ColumnName="Tag_Title" />
+            <ScalarProperty Name="Tag_Keywords" ColumnName="Tag_Keywords" />
+            <ScalarProperty Name="Tag_Description" ColumnName="Tag_Description" />
+            <ScalarProperty Name="Code" ColumnName="Code" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="cg_cms_StaticBlocks"><EntityTypeMapping TypeName="caval_goModel.cg_cms_StaticBlocks"><MappingFragment StoreEntitySet="cg_cms_StaticBlocks">
+            <ScalarProperty Name="StaticBlockId" ColumnName="StaticBlockId" />
+            <ScalarProperty Name="Name" ColumnName="Name" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="cg_cms_StaticBlocks_Info"><EntityTypeMapping TypeName="caval_goModel.cg_cms_StaticBlocks_Info"><MappingFragment StoreEntitySet="cg_cms_StaticBlocks_Info">
+            <ScalarProperty Name="StaticBlockInfoId" ColumnName="StaticBlockInfoId" />
+            <ScalarProperty Name="StaticBlockId" ColumnName="StaticBlockId" />
+            <ScalarProperty Name="LanguageId" ColumnName="LanguageId" />
+            <ScalarProperty Name="Code" ColumnName="Code" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="cg_CustomerProfile"><EntityTypeMapping TypeName="caval_goModel.cg_CustomerProfile"><MappingFragment StoreEntitySet="cg_CustomerProfile">
+            <ScalarProperty Name="ProfileId" ColumnName="ProfileId" />
+            <ScalarProperty Name="UserName" ColumnName="UserName" />
+            <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+            <ScalarProperty Name="LastName" ColumnName="LastName" />
+            <ScalarProperty Name="Email" ColumnName="Email" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="cg_Languages"><EntityTypeMapping TypeName="caval_goModel.cg_Languages"><MappingFragment StoreEntitySet="cg_Languages">
+            <ScalarProperty Name="LanguageId" ColumnName="LanguageId" />
+            <ScalarProperty Name="Name" ColumnName="Name" />
+            <ScalarProperty Name="SystemLocale" ColumnName="SystemLocale" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="cg_LanguageTranslations"><EntityTypeMapping TypeName="caval_goModel.cg_LanguageTranslations"><MappingFragment StoreEntitySet="cg_LanguageTranslations">
+            <ScalarProperty Name="LanguageTranslationId" ColumnName="LanguageTranslationId" />
+            <ScalarProperty Name="Original" ColumnName="Original" />
+            <ScalarProperty Name="Translated" ColumnName="Translated" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="cg_Products_Dates"><EntityTypeMapping TypeName="caval_goModel.cg_Products_Dates"><MappingFragment StoreEntitySet="cg_Products_Dates">
+            <ScalarProperty Name="ProductDateId" ColumnName="ProductDateId" />
+            <ScalarProperty Name="DepartureDate" ColumnName="DepartureDate" />
+            <ScalarProperty Name="ReturnDate" ColumnName="ReturnDate" />
+            <ScalarProperty Name="MiniPersons" ColumnName="MiniPersons" />
+            <ScalarProperty Name="Note" ColumnName="Note" />
+            <ScalarProperty Name="Price" ColumnName="Price" />
+            <ScalarProperty Name="FlightPrice" ColumnName="FlightPrice" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="cg_Products_Info"><EntityTypeMapping TypeName="caval_goModel.cg_Products_Info"><MappingFragment StoreEntitySet="cg_Products_Info">
+            <ScalarProperty Name="MetaTitle" ColumnName="MetaTitle" />
+                <ScalarProperty Name="MetaKeywords" ColumnName="MetaKeywords" />
+                <ScalarProperty Name="MetaDescription" ColumnName="MetaDescription" />
+                <ScalarProperty Name="UrlCustomSegment" ColumnName="UrlCustomSegment" />
+                <ScalarProperty Name="CustomField2" ColumnName="CustomField2" />
+                <ScalarProperty Name="CustomField1" ColumnName="CustomField1" />
+                <ScalarProperty Name="ProductSummary" ColumnName="ProductSummary" />
+                <ScalarProperty Name="PricingInfo" ColumnName="PricingInfo" />
+                <ScalarProperty Name="ProductInfoId" ColumnName="ProductInfoId" />
+            <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+            <ScalarProperty Name="LanguageId" ColumnName="LanguageId" />
+            <ScalarProperty Name="Title" ColumnName="Title" />
+            <ScalarProperty Name="ShortDescription" ColumnName="ShortDescription" />
+            <ScalarProperty Name="Description" ColumnName="Description" />
+            <ScalarProperty Name="Status" ColumnName="Status" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="cg_Products_Info_Tabs"><EntityTypeMapping TypeName="caval_goModel.cg_Products_Info_Tabs"><MappingFragment StoreEntitySet="cg_Products_Info_Tabs">
+            <ScalarProperty Name="ProductInfoTabId" ColumnName="ProductInfoTabId" />
+            <ScalarProperty Name="TabTitle" ColumnName="TabTitle" />
+            <ScalarProperty Name="TabCode" ColumnName="TabCode" />
+            <ScalarProperty Name="ListOrder" ColumnName="ListOrder" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="cg_Products_Photos"><EntityTypeMapping TypeName="caval_goModel.cg_Products_Photos"><MappingFragment StoreEntitySet="cg_Products_Photos">
+            <ScalarProperty Name="ProductPhotoId" ColumnName="ProductPhotoId" />
+            <ScalarProperty Name="OriginalFileName" ColumnName="OriginalFileName" />
+            <ScalarProperty Name="FileExtension" ColumnName="FileExtension" />
+            <ScalarProperty Name="FileSize" ColumnName="FileSize" />
+            <ScalarProperty Name="UploadDate" ColumnName="UploadDate" />
+            <ScalarProperty Name="Description" ColumnName="Description" />
+            <ScalarProperty Name="ListOrder" ColumnName="ListOrder" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="cg_Products_Tags"><EntityTypeMapping TypeName="caval_goModel.cg_Products_Tags"><MappingFragment StoreEntitySet="cg_Products_Tags">
+            <ScalarProperty Name="EcludedCategories" ColumnName="EcludedCategories" />
+                <ScalarProperty Name="ListOrder" ColumnName="ListOrder" />
+                <ScalarProperty Name="ProductTagId" ColumnName="ProductTagId" />
+            <ScalarProperty Name="Tag" ColumnName="Tag" />
+            <ScalarProperty Name="Type" ColumnName="Type" />
+            <ScalarProperty Name="Description" ColumnName="Description" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="cg_Products_Tags_Info"><EntityTypeMapping TypeName="caval_goModel.cg_Products_Tags_Info"><MappingFragment StoreEntitySet="cg_Products_Tags_Info">
+            <ScalarProperty Name="MetaTitle" ColumnName="MetaTitle" />
+                <ScalarProperty Name="MetaKeywords" ColumnName="MetaKeywords" />
+                <ScalarProperty Name="MetaDescription" ColumnName="MetaDescription" />
+                <ScalarProperty Name="ProductTagInfoId" ColumnName="ProductTagInfoId" />
+            <ScalarProperty Name="ProductTagId" ColumnName="ProductTagId" />
+            <ScalarProperty Name="LanguageId" ColumnName="LanguageId" />
+            <ScalarProperty Name="Name" ColumnName="Name" />
+            <ScalarProperty Name="Description" ColumnName="Description" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="cgvw_ProductInfoLanguage"><EntityTypeMapping TypeName="caval_goModel.cgvw_ProductInfoLanguage"><MappingFragment StoreEntitySet="cgvw_ProductInfoLanguage">
+            <ScalarProperty Name="ProductInfoId" ColumnName="ProductInfoId" />
+            <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+            <ScalarProperty Name="LanguageId" ColumnName="LanguageId" />
+            <ScalarProperty Name="Title" ColumnName="Title" />
+            <ScalarProperty Name="ShortDescription" ColumnName="ShortDescription" />
+            <ScalarProperty Name="Description" ColumnName="Description" />
+            <ScalarProperty Name="Status" ColumnName="Status" />
+            <ScalarProperty Name="LanguageName" ColumnName="LanguageName" />
+            <ScalarProperty Name="SystemLocale" ColumnName="SystemLocale" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="cgvw_ProductTagMap"><EntityTypeMapping TypeName="caval_goModel.cgvw_ProductTagMap"><MappingFragment StoreEntitySet="cgvw_ProductTagMap">
+            <ScalarProperty Name="ProductTagId" ColumnName="ProductTagId" />
+            <ScalarProperty Name="Tag" ColumnName="Tag" />
+            <ScalarProperty Name="TagSelect" ColumnName="TagSelect" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <AssociationSetMapping Name="FK_cg_cms_Pages_Info_cg_cms_Pages" TypeName="caval_goModel.FK_cg_cms_Pages_Info_cg_cms_Pages" StoreEntitySet="cg_cms_Pages_Info">
+            <EndProperty Name="cg_cms_Pages">
+              <ScalarProperty Name="PageId" ColumnName="CmsPageId" />
+            </EndProperty>
+            <EndProperty Name="cg_cms_Pages_Info">
+              <ScalarProperty Name="CmsPageId" ColumnName="CmsPageId" />
+              <ScalarProperty Name="LanguageId" ColumnName="LanguageId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_cg_cms_StaticBlocks_Info_cg_cms_StaticBlocks" TypeName="caval_goModel.FK_cg_cms_StaticBlocks_Info_cg_cms_StaticBlocks" StoreEntitySet="cg_cms_StaticBlocks_Info">
+            <EndProperty Name="cg_cms_StaticBlocks">
+              <ScalarProperty Name="StaticBlockId" ColumnName="StaticBlockId" />
+            </EndProperty>
+            <EndProperty Name="cg_cms_StaticBlocks_Info">
+              <ScalarProperty Name="StaticBlockId" ColumnName="StaticBlockId" />
+              <ScalarProperty Name="LanguageId" ColumnName="LanguageId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_cg_LanguageTranslations_cg_Languages" TypeName="caval_goModel.FK_cg_LanguageTranslations_cg_Languages" StoreEntitySet="cg_LanguageTranslations">
+            <EndProperty Name="cg_Languages">
+              <ScalarProperty Name="LanguageId" ColumnName="LanguageId" />
+            </EndProperty>
+            <EndProperty Name="cg_LanguageTranslations">
+              <ScalarProperty Name="LanguageTranslationId" ColumnName="LanguageTranslationId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_cg_Products_Info_Tabs_cg_Products_Info" TypeName="caval_goModel.FK_cg_Products_Info_Tabs_cg_Products_Info" StoreEntitySet="cg_Products_Info_Tabs">
+            <EndProperty Name="cg_Products_Info">
+              <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+              <ScalarProperty Name="LanguageId" ColumnName="LanguageId" />
+            </EndProperty>
+            <EndProperty Name="cg_Products_Info_Tabs">
+              <ScalarProperty Name="ProductInfoTabId" ColumnName="ProductInfoTabId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_cg_Products_Tags_Info_cg_Products_Tags" TypeName="caval_goModel.FK_cg_Products_Tags_Info_cg_Products_Tags" StoreEntitySet="cg_Products_Tags_Info">
+            <EndProperty Name="cg_Products_Tags">
+              <ScalarProperty Name="ProductTagId" ColumnName="ProductTagId" />
+            </EndProperty>
+            <EndProperty Name="cg_Products_Tags_Info">
+              <ScalarProperty Name="ProductTagId" ColumnName="ProductTagId" />
+              <ScalarProperty Name="LanguageId" ColumnName="LanguageId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <EntitySetMapping Name="cg_Products_Tags_Map">
+            <EntityTypeMapping TypeName="caval_goModel.cg_Products_Tags_Map">
+              <MappingFragment StoreEntitySet="cg_Products_Tags_Map">
+                <ScalarProperty Name="ProductTagId" ColumnName="ProductTagId" />
+                <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+                <ScalarProperty Name="ProductTagMapId" ColumnName="ProductTagMapId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="FK_cg_Products_Tags_Map_cg_Products_Tags" TypeName="caval_goModel.FK_cg_Products_Tags_Map_cg_Products_Tags" StoreEntitySet="cg_Products_Tags_Map">
+            <EndProperty Name="cg_Products_Tags_Map">
+              <ScalarProperty Name="ProductTagId" ColumnName="ProductTagId" />
+              <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+            </EndProperty>
+            <EndProperty Name="cg_Products_Tags">
+              <ScalarProperty Name="ProductTagId" ColumnName="ProductTagId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <EntitySetMapping Name="cg_SitePhotos">
+            <EntityTypeMapping TypeName="caval_goModel.cg_SitePhotos">
+              <MappingFragment StoreEntitySet="cg_SitePhotos">
+                <ScalarProperty Name="AlternativeText" ColumnName="AlternativeText" />
+                <ScalarProperty Name="Link" ColumnName="Link" />
+                <ScalarProperty Name="ListOrder" ColumnName="ListOrder" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="UploadDate" ColumnName="UploadDate" />
+                <ScalarProperty Name="FileSize" ColumnName="FileSize" />
+                <ScalarProperty Name="FileExtension" ColumnName="FileExtension" />
+                <ScalarProperty Name="OriginalFileName" ColumnName="OriginalFileName" />
+                <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+                <ScalarProperty Name="PhotoType" ColumnName="PhotoType" />
+                <ScalarProperty Name="SitePhotoId" ColumnName="SitePhotoId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="cg_Activities">
+            <EntityTypeMapping TypeName="caval_goModel.cg_Activities">
+              <MappingFragment StoreEntitySet="cg_Activities">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ActivityId" ColumnName="ActivityId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="cg_Products">
+            <EntityTypeMapping TypeName="caval_goModel.cg_Products">
+              <MappingFragment StoreEntitySet="cg_Products">
+                <ScalarProperty Name="Duration" ColumnName="Duration" />
+                <ScalarProperty Name="AllYearRound" ColumnName="AllYearRound" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="ProductCode" ColumnName="ProductCode" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="cg_Products_Activities_Map">
+            <EntityTypeMapping TypeName="caval_goModel.cg_Products_Activities_Map">
+              <MappingFragment StoreEntitySet="cg_Products_Activities_Map">
+                <ScalarProperty Name="ProductActivityMapId" ColumnName="ProductActivityMapId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="FK_cg_Activities_Info_cg_Activities" TypeName="caval_goModel.FK_cg_Activities_Info_cg_Activities" StoreEntitySet="cg_Activities_Info">
+            <EndProperty Name="cg_Activities_Info">
+              <ScalarProperty Name="LanguageId" ColumnName="LanguageId" />
+              <ScalarProperty Name="ActivityId" ColumnName="ActivityId" />
+            </EndProperty>
+            <EndProperty Name="cg_Activities">
+              <ScalarProperty Name="ActivityId" ColumnName="ActivityId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_cg_Products_Activities_Map_cg_Activities" TypeName="caval_goModel.FK_cg_Products_Activities_Map_cg_Activities" StoreEntitySet="cg_Products_Activities_Map">
+            <EndProperty Name="cg_Products_Activities_Map">
+              <ScalarProperty Name="ProductActivityMapId" ColumnName="ProductActivityMapId" />
+            </EndProperty>
+            <EndProperty Name="cg_Activities">
+              <ScalarProperty Name="ActivityId" ColumnName="ActivityId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_cg_Products_Activities_Map_cg_Products" TypeName="caval_goModel.FK_cg_Products_Activities_Map_cg_Products" StoreEntitySet="cg_Products_Activities_Map">
+            <EndProperty Name="cg_Products_Activities_Map">
+              <ScalarProperty Name="ProductActivityMapId" ColumnName="ProductActivityMapId" />
+            </EndProperty>
+            <EndProperty Name="cg_Products">
+              <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_cg_Products_Dates_cg_Products" TypeName="caval_goModel.FK_cg_Products_Dates_cg_Products" StoreEntitySet="cg_Products_Dates">
+            <EndProperty Name="cg_Products_Dates">
+              <ScalarProperty Name="ProductDateId" ColumnName="ProductDateId" />
+            </EndProperty>
+            <EndProperty Name="cg_Products">
+              <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+            </EndProperty>
+            <Condition ColumnName="ProductId" IsNull="false" />
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_cg_Products_Info_cg_Products" TypeName="caval_goModel.FK_cg_Products_Info_cg_Products" StoreEntitySet="cg_Products_Info">
+            <EndProperty Name="cg_Products_Info">
+              <ScalarProperty Name="LanguageId" ColumnName="LanguageId" />
+              <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+            </EndProperty>
+            <EndProperty Name="cg_Products">
+              <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_cg_Products_Photos_cg_Products" TypeName="caval_goModel.FK_cg_Products_Photos_cg_Products" StoreEntitySet="cg_Products_Photos">
+            <EndProperty Name="cg_Products_Photos">
+              <ScalarProperty Name="ProductPhotoId" ColumnName="ProductPhotoId" />
+            </EndProperty>
+            <EndProperty Name="cg_Products">
+              <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_cg_Products_Tags_Map_cg_Products" TypeName="caval_goModel.FK_cg_Products_Tags_Map_cg_Products" StoreEntitySet="cg_Products_Tags_Map">
+            <EndProperty Name="cg_Products_Tags_Map">
+              <ScalarProperty Name="ProductTagId" ColumnName="ProductTagId" />
+              <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+            </EndProperty>
+            <EndProperty Name="cg_Products">
+              <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <EntitySetMapping Name="cgvw_ProductActivityMap">
+            <EntityTypeMapping TypeName="caval_goModel.cgvw_ProductActivityMap">
+              <MappingFragment StoreEntitySet="cgvw_ProductActivityMap">
+                <ScalarProperty Name="ActivitySelect" ColumnName="ActivitySelect" />
+                <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ActivityId" ColumnName="ActivityId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="cg_Slideshows">
+            <EntityTypeMapping TypeName="caval_goModel.cg_Slideshows">
+              <MappingFragment StoreEntitySet="cg_Slideshows">
+                <ScalarProperty Name="LanguageCode" ColumnName="LanguageCode" />
+                <ScalarProperty Name="SlideshowKey" ColumnName="SlideshowKey" />
+                <ScalarProperty Name="SlideshowName" ColumnName="SlideshowName" />
+                <ScalarProperty Name="SlideshowId" ColumnName="SlideshowId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="cg_Destinations_Info">
+            <EntityTypeMapping TypeName="caval_goModel.cg_Destinations_Info">
+              <MappingFragment StoreEntitySet="cg_Destinations_Info">
+                <ScalarProperty Name="MetaTitle" ColumnName="MetaTitle" />
+                <ScalarProperty Name="MetaKeywords" ColumnName="MetaKeywords" />
+                <ScalarProperty Name="MetaDescription" ColumnName="MetaDescription" />
+                <ScalarProperty Name="UrlCustomSegment" ColumnName="UrlCustomSegment" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="ShortDescription" ColumnName="ShortDescription" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="LanguageId" ColumnName="LanguageId" />
+                <ScalarProperty Name="DestinationId" ColumnName="DestinationId" />
+                <ScalarProperty Name="DestinationInfoId" ColumnName="DestinationInfoId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="cg_Destinations">
+            <EntityTypeMapping TypeName="caval_goModel.cg_Destinations">
+              <MappingFragment StoreEntitySet="cg_Destinations">
+                <ScalarProperty Name="MapAddress" ColumnName="MapAddress" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="DestinationId" ColumnName="DestinationId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="FK_cg_Products_cg_Destinations" TypeName="caval_goModel.FK_cg_Products_cg_Destinations" StoreEntitySet="cg_Products">
+            <EndProperty Name="cg_Products">
+              <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+            </EndProperty>
+            <EndProperty Name="cg_Destinations">
+              <ScalarProperty Name="DestinationId" ColumnName="DestinationId" />
+            </EndProperty>
+            <Condition ColumnName="DestinationId" IsNull="false" />
+          </AssociationSetMapping>
+          </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="False" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="DataModel">
+        <EntityTypeShape EntityType="caval_goModel.cg_Activities_Info" Width="1.5" PointX="10" PointY="13" Height="2.3648893229166674" IsExpanded="true" />
+        <EntityTypeShape EntityType="caval_goModel.cg_cms_Pages" Width="1.5" PointX="10.75" PointY="4.5" Height="1.5956835937499996" IsExpanded="true" />
+        <EntityTypeShape EntityType="caval_goModel.cg_cms_Pages_Info" Width="1.5" PointX="13" PointY="4" Height="2.7494921874999996" IsExpanded="true" />
+        <EntityTypeShape EntityType="caval_goModel.cg_cms_StaticBlocks" Width="1.5" PointX="10.75" PointY="1.125" Height="1.5956835937499996" IsExpanded="true" />
+        <EntityTypeShape EntityType="caval_goModel.cg_cms_StaticBlocks_Info" Width="1.5" PointX="13" PointY="0.875" Height="1.9802864583333317" IsExpanded="true" />
+        <EntityTypeShape EntityType="caval_goModel.cg_CustomerProfile" Width="1.5" PointX="12.75" PointY="12.75" Height="1.9802864583333317" IsExpanded="true" />
+        <EntityTypeShape EntityType="caval_goModel.cg_Languages" Width="1.5" PointX="9.75" PointY="9.875" Height="1.7879850260416674" IsExpanded="true" />
+        <EntityTypeShape EntityType="caval_goModel.cg_LanguageTranslations" Width="1.5" PointX="12" PointY="9.875" Height="1.787985026041671" IsExpanded="true" />
+        <EntityTypeShape EntityType="caval_goModel.cg_Products_Dates" Width="1.5" PointX="5.25" PointY="6.125" Height="2.5571907552083388" IsExpanded="true" />
+        <EntityTypeShape EntityType="caval_goModel.cg_Products_Info" Width="1.5" PointX="5.25" PointY="9.375" Height="2.749492187499996" IsExpanded="true" />
+        <EntityTypeShape EntityType="caval_goModel.cg_Products_Info_Tabs" Width="1.5" PointX="7.5" PointY="9.75" Height="1.9802864583333388" IsExpanded="true" />
+        <EntityTypeShape EntityType="caval_goModel.cg_Products_Photos" Width="1.5" PointX="5.25" PointY="14" Height="2.5571907552083388" IsExpanded="true" />
+        <EntityTypeShape EntityType="caval_goModel.cg_Products_Tags" Width="1.5" PointX="6" PointY="2.625" Height="2.172587890624996" IsExpanded="true" />
+        <EntityTypeShape EntityType="caval_goModel.cg_Products_Tags_Info" Width="1.5" PointX="8.25" PointY="2.625" Height="2.1725878906250031" IsExpanded="true" />
+        <EntityTypeShape EntityType="caval_goModel.cgvw_ProductInfoLanguage" Width="1.5" PointX="0.75" PointY="13.75" Height="2.7494921875000031" IsExpanded="true" />
+        <EntityTypeShape EntityType="caval_goModel.cgvw_ProductTagMap" Width="1.5" PointX="14.75" PointY="7.75" Height="1.5956835937500031" IsExpanded="true" />
+        <AssociationConnector Association="caval_goModel.FK_cg_cms_Pages_Info_cg_cms_Pages" ManuallyRouted="false">
+          <ConnectorPoint PointX="12.25" PointY="5.297841796875" />
+          <ConnectorPoint PointX="13" PointY="5.297841796875" />
+        </AssociationConnector>
+        <AssociationConnector Association="caval_goModel.FK_cg_cms_StaticBlocks_Info_cg_cms_StaticBlocks" ManuallyRouted="false">
+          <ConnectorPoint PointX="12.25" PointY="1.9228417968749998" />
+          <ConnectorPoint PointX="13" PointY="1.9228417968749998" />
+        </AssociationConnector>
+        <AssociationConnector Association="caval_goModel.FK_cg_LanguageTranslations_cg_Languages" ManuallyRouted="false">
+          <ConnectorPoint PointX="11.25" PointY="10.768992513020834" />
+          <ConnectorPoint PointX="11.541666666666666" PointY="10.768992513020834" />
+          <ConnectorPoint PointX="11.708333333333334" PointY="10.768992513020834" />
+          <ConnectorPoint PointX="12" PointY="10.768992513020834" />
+        </AssociationConnector>
+        <AssociationConnector Association="caval_goModel.FK_cg_Products_Info_Tabs_cg_Products_Info" ManuallyRouted="false">
+          <ConnectorPoint PointX="6.75" PointY="10.740143229166669" />
+          <ConnectorPoint PointX="7.5" PointY="10.740143229166669" />
+        </AssociationConnector>
+        <AssociationConnector Association="caval_goModel.FK_cg_Products_Tags_Info_cg_Products_Tags" ManuallyRouted="false">
+          <ConnectorPoint PointX="7.5" PointY="3.8723428776041655" />
+          <ConnectorPoint PointX="8.25" PointY="3.8723428776041655" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="caval_goModel.cg_Products_Tags_Map" Width="1.5" PointX="8.25" PointY="6.375" Height="1.9802864583333388" />
+        <AssociationConnector Association="caval_goModel.FK_cg_Products_Tags_Map_cg_Products_Tags">
+          <ConnectorPoint PointX="7.5" PointY="4.797587890624996" />
+          <ConnectorPoint PointX="7.875" PointY="5.172587890624996" />
+          <ConnectorPoint PointX="7.875" PointY="7.3651432291666676" />
+          <ConnectorPoint PointX="8.25" PointY="7.3651432291666676" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="caval_goModel.cg_SitePhotos" Width="1.5" PointX="15.375" PointY="0.75" Height="2.7494921875000102" />
+        <EntityTypeShape EntityType="caval_goModel.cg_Activities" Width="1.5" PointX="7.75" PointY="13.25" Height="1.7879850260416674" />
+        <EntityTypeShape EntityType="caval_goModel.cg_Products" Width="1.5" PointX="3" PointY="7.625" Height="3.1340950520833246" />
+        <EntityTypeShape EntityType="caval_goModel.cg_Products_Activities_Map" Width="1.5" PointX="11" PointY="7.5" Height="1.5956835937500102" />
+        <AssociationConnector Association="caval_goModel.FK_cg_Activities_Info_cg_Activities">
+          <ConnectorPoint PointX="9.25" PointY="14.414364641276041" />
+          <ConnectorPoint PointX="10" PointY="14.414364641276041" />
+        </AssociationConnector>
+        <AssociationConnector Association="caval_goModel.FK_cg_Products_Activities_Map_cg_Activities">
+          <ConnectorPoint PointX="9.25" PointY="13.665744256510415" />
+          <ConnectorPoint PointX="9.75" PointY="13.665744256510415" />
+          <ConnectorPoint PointX="9.75" PointY="12.75" />
+          <ConnectorPoint PointX="11.625" PointY="12.75" />
+          <ConnectorPoint PointX="11.625" PointY="9.09568359375001" />
+        </AssociationConnector>
+        <AssociationConnector Association="caval_goModel.FK_cg_Products_Activities_Map_cg_Products">
+          <ConnectorPoint PointX="4.5" PointY="8.9201871744791745" />
+          <ConnectorPoint PointX="9.2916666666666661" PointY="8.9201871744791745" />
+          <ConnectorPoint PointX="9.4583333333333339" PointY="8.9201871744791745" />
+          <ConnectorPoint PointX="11" PointY="8.9201871744791745" />
+        </AssociationConnector>
+        <AssociationConnector Association="caval_goModel.FK_cg_Products_Dates_cg_Products">
+          <ConnectorPoint PointX="4.5" PointY="8.15359537760417" />
+          <ConnectorPoint PointX="5.25" PointY="8.15359537760417" />
+        </AssociationConnector>
+        <AssociationConnector Association="caval_goModel.FK_cg_Products_Info_cg_Products">
+          <ConnectorPoint PointX="4.5" PointY="10.259348958333334" />
+          <ConnectorPoint PointX="5.25" PointY="10.259348958333334" />
+        </AssociationConnector>
+        <AssociationConnector Association="caval_goModel.FK_cg_Products_Photos_cg_Products">
+          <ConnectorPoint PointX="3.75" PointY="11.143697916666666" />
+          <ConnectorPoint PointX="3.75" PointY="15.278595377604169" />
+          <ConnectorPoint PointX="5.25" PointY="15.278595377604169" />
+        </AssociationConnector>
+        <AssociationConnector Association="caval_goModel.FK_cg_Products_Tags_Map_cg_Products">
+          <ConnectorPoint PointX="4.5" PointY="9.147596087239581" />
+          <ConnectorPoint PointX="9.375" PointY="9.147596087239581" />
+          <ConnectorPoint PointX="9.375" PointY="8.3552864583333388" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="caval_goModel.cgvw_ProductActivityMap" Width="1.5" PointX="15.375" PointY="4.75" Height="1.7879850260416674" />
+        <EntityTypeShape EntityType="caval_goModel.cg_Slideshows" Width="1.5" PointX="15.375" PointY="11.375" Height="1.7879850260416674" />
+        <EntityTypeShape EntityType="caval_goModel.cg_Destinations_Info" Width="1.5" PointX="3" PointY="3.625" Height="3.1340950520833246" />
+        <EntityTypeShape EntityType="caval_goModel.cg_Destinations" Width="1.5" PointX="0.75" PointY="6.375" Height="1.9802864583333397" />
+        <AssociationConnector Association="caval_goModel.FK_cg_Destinations_Info_cg_Destinations" >
+          <ConnectorPoint PointX="2.25" PointY="6.5670475260416659" />
+          <ConnectorPoint PointX="3" PointY="6.5670475260416659" />
+        </AssociationConnector>
+        <AssociationConnector Association="caval_goModel.FK_cg_Products_cg_Destinations" >
+          <ConnectorPoint PointX="2.25" PointY="7.99014322916667" />
+          <ConnectorPoint PointX="3" PointY="7.99014322916667" />
+        </AssociationConnector>
+        </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

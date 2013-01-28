@@ -1,0 +1,544 @@
+﻿/*----------------------------------------------------------
+The base color for this template is #5c87b2. If you'd like
+to use a different color start by replacing all instances of
+#5c87b2 with your new color.
+----------------------------------------------------------*/
+body
+{
+    background-color: #000;
+    font-size: .75em;
+    font-family: Arial, Helvetica, Sans-Serif;
+    margin: 0;
+    padding: 0;
+    color: #696969;
+}
+
+a:link
+{
+    color: #336699;
+    text-decoration: underline;
+}
+a:visited
+{
+    color: #336699;
+}
+a:hover
+{
+    color: #1d60ff;
+    text-decoration: none;
+}
+a:active
+{
+    color: #12eb87;
+}
+
+p, ul
+{
+    margin-bottom: 20px;
+    line-height: 1.6em;
+}
+
+/* HEADINGS   
+----------------------------------------------------------*/
+h1, h2, h3, h4, h5, h6
+{
+    font-size: 1.5em;
+    color: #000;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1
+{
+    font-size: 2em;
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+h2
+{
+    padding: 0 0 10px 0;
+}
+h3
+{
+    font-size: 1.2em;
+}
+h4
+{
+    font-size: 1.1em;
+}
+h5, h6
+{
+    font-size: 1em;
+}
+
+/* this rule styles <h2> tags that are the 
+first child of the left and right table columns */
+.rightColumn > h1, .rightColumn > h2, .leftColumn > h1, .leftColumn > h2
+{
+    margin-top: 0;
+}
+
+/* PRIMARY LAYOUT ELEMENTS   
+----------------------------------------------------------*/
+
+/* you can specify a greater or lesser percentage for the 
+page width. Or, you can specify an exact pixel width. */
+.page
+{
+    background: #fff;
+    width: 940px;
+    border: 10px solid #333;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+}
+
+#header
+{
+    position: relative;
+    margin-bottom: 0px;
+    color: #000;
+    padding: 0 0 8px 0;
+    border-bottom: 10px solid #333;
+}
+
+#header h1
+{
+    font-weight: bold;
+    padding: 5px 0;
+    margin: 0;
+    color: #fff;
+    border: none;
+    line-height: 2em;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 32px !important;
+}
+
+#main
+{
+    padding: 40px 40px 15px 40px;
+    background-color: #fff;
+    margin-bottom: 30px;
+    _height: 1px; /* only IE6 applies CSS properties starting with an underscore */
+}
+
+#footer
+{
+    color: #999;
+    padding: 10px 0;
+    text-align: center;
+    line-height: normal;
+    margin: 0;
+    font-size: .9em;
+}
+
+/* TAB MENU   
+----------------------------------------------------------*/
+ul#menu
+{
+    padding: 0 0 0 0;
+    position: relative;
+    margin: 0 4px 0 0;
+    text-align: right;
+    display: inline;
+}
+
+ul#menu li
+{
+    display: inline;
+    list-style: none;
+    padding: 0;
+}
+
+ul#menu li#greeting
+{
+    padding: 10px 20px;
+    font-weight: bold;
+    text-decoration: none;
+    line-height: 2.8em;
+    color: #fff;
+}
+
+ul#menu li a
+{
+    padding: 4px 12px;
+    text-decoration: none;
+    line-height: 2.8em;
+    color: #336699;
+    border-right: 1px solid #ebebeb;
+}
+
+ul#menu li a:hover
+{
+    background-color: #e8eef4;
+    text-decoration: none;
+}
+
+ul#menu li.selected a
+{
+    background-color: #fff;
+    color: #000;
+}
+
+/* FORM LAYOUT ELEMENTS   
+----------------------------------------------------------*/
+
+fieldset 
+{
+    margin: 1em 0;
+    padding: 1em;
+    border: 1px solid #e4e4e4;
+}
+
+fieldset p 
+{
+    margin: 2px 12px 10px 10px;
+}
+
+legend 
+{
+    font-size: 1.1em;
+    font-weight: 600;
+    padding: 2px 4px 8px 4px;
+}
+
+input[type="text"] 
+{
+    width: 200px;
+    border: 1px solid #CCC;
+}
+
+input[type="password"] 
+{
+    width: 200px;
+    border: 1px solid #CCC;
+}
+
+/* TABLE
+----------------------------------------------------------*/
+
+table 
+{
+  border: solid 1px #e8eef4;
+  border-collapse: collapse;
+}
+
+table td 
+{
+  padding: 5px;   
+  border: solid 1px #e8eef4;
+}
+
+table th
+{
+  padding: 6px 5px;
+  text-align: left;
+  background-color: #e8eef4; 
+  border: solid 1px #e8eef4;   
+}
+
+table input.inline-edit
+{
+    border: 1px solid transparent;
+    color: #666;
+    font-size: 12px;
+}
+
+table input.inline-edit:hover
+{
+    border: 1px solid #FCC26A;
+}
+
+table input.inline-edit:focus
+{
+    border: 1px solid #FCC26A;
+    background: #FAF3BB;
+}
+
+table a.inline-edit-save-button
+{
+    visibility: hidden;
+}
+
+table a.inline-edit-save-button.on
+{
+    visibility: visible;
+}
+
+/* MISC  
+----------------------------------------------------------*/
+.clear
+{
+    clear: both;
+}
+
+.error
+{
+    color:Red;
+}
+
+#menucontainer
+{
+    margin:-20px 30px 0 0;
+    text-align: right;
+}
+
+div#title
+{
+    display:block;
+    float:left;
+    text-align:left;
+    margin: 20px 0 0 40px;
+}
+
+div#ndo_logo
+{
+    display:block;
+    float:right;
+    text-align:left;
+    margin: 30px 40px 0 0;
+}
+
+#logindisplay
+{
+    font-size: 1.1em;
+    display: inline;
+    text-align: right;
+    margin: 10px;
+    color: #666;
+}
+
+#logindisplay a:link,
+#logindisplay a:visited
+{
+    color: #666;
+    text-decoration: underline;
+}
+
+#logindisplay a:hover
+{
+    color: #666;
+    text-decoration: none;
+}
+
+#main h2 
+{
+    margin: 0 0 20px 0;
+    padding: 0;
+    color: #666;
+    border-bottom: 1px solid #00aeef;
+    font-size: 21px;
+}
+
+#main h3 
+{
+    margin: 0 0 0 0;
+    color: #00aeef;
+    font-size: 16px;
+}
+
+#main ul 
+{
+    list-style: disc;
+}
+
+#main li 
+{
+    padding: 0 0 0 0px;
+    margin: 0 0 0 14px;
+}
+
+
+/* Select Class
+-----------------------------------------------------------*/
+.event-item 
+{
+    margin: 0 0 20px 0;
+    padding: 4px;
+    border: 1px solid #ebebeb;
+    background: #f0f4f8;
+}
+.event-item h3
+{
+    padding: 0 0 10px 0;
+}
+.event-item .class-item 
+{
+    border-top: 1px solid #e4e4e4;
+    border-left: 1px solid #e4e4e4;
+    padding: 8px 0 8px 8px;
+    background: #fff;
+}
+.class-item:hover
+{
+    border-top: 1px solid #ccc;
+    background: #f0f4f8;
+}
+.class-item .title
+{
+    font-weight: bold;
+    line-height: 24px;
+}
+.class-item:hover .title
+{
+    color: #00aeef;
+}
+.class-item .details
+{
+    line-height: 24px;
+}
+.class-item .item
+{
+    margin: 0 30px 0 0;
+}
+.class-item .select-class
+{
+    margin: 0 20px 0 0;
+    display: none;
+}
+.class-item .left
+{
+    float: left;
+}
+.class-item .right
+{
+    float: right;
+    padding: 4px 0 0 0;
+}
+
+
+.warning
+{
+    border: 1px solid #ff9900;
+    background-color: #ffeeee;
+    padding: 4px;
+}
+
+/* Styles for validation helpers
+-----------------------------------------------------------*/
+.field-validation-error
+{
+    color: #ff0000;
+}
+
+.field-validation-valid
+{
+    display: none;
+}
+
+.input-validation-error,
+input.error
+{
+    border: 1px solid #ff0000;
+    background-color: #ffeeee;
+}
+
+.validation-summary-errors
+{
+    font-weight: bold;
+    color: #ff0000;
+}
+
+.validation-summary-valid
+{
+    display: none;
+}
+
+/* Styles for editor and display helpers
+----------------------------------------------------------*/
+.display-label,
+.editor-label,
+.display-field,
+.editor-field
+{
+    margin: 0.5em 0;
+}
+
+.text-box
+{
+    width: 30em;
+}
+
+.text-box.multi-line
+{
+    height: 6.5em;
+}
+
+.tri-state
+{
+    width: 6em;
+}
+
+.editor-field textarea
+{
+    width: 98%;
+    display: block;
+}
+
+/* Re-usable styles
+----------------------------------------------------------*/
+.light-border-pad10 
+{
+    border: 1px solid #e4e4e4;
+    padding: 10px;
+}
+
+.on-list-new-form
+{
+    margin: 0 0 10px 0;
+}
+
+.toggle-form 
+{
+    display: none;
+}
+
+table.full-width 
+{
+    width: 100%;
+}
+
+table.full-width.list tr:hover
+{
+    background: #ffffcc;
+}
+
+input.small 
+{
+    width: 50px;
+}
+
+input.full-width 
+{
+    width: 98%;
+}
+
+.fields div.top-right-button
+{
+    float: right;
+}
+
+/* Product Edit
+--------------------------------*/
+
+div.tablist-item
+{
+    border: 1px solid #ccc;
+    padding: 10px;
+    background: #efefef;
+    margin: 0 0 8px 0;
+}
+
+form.newtabform
+{
+    border: 1px solid #ffcc00;
+    padding: 10px;
+    background: #fcfcdb;
+}
+
+
+
+
+
+
+
+

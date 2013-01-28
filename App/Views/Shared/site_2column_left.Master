@@ -1,0 +1,48 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewMasterPage" %>
+
+ <asp:Content ID="Content1" ContentPlaceHolderID="cphHead" runat="server">
+    <asp:ContentPlaceHolder ID="cphHead" runat="server">
+        
+    </asp:ContentPlaceHolder>
+</asp:Content>
+
+<asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
+
+<asp:ContentPlaceHolder ID="cphBreadcrumbs" runat="server">
+        
+</asp:ContentPlaceHolder>
+
+<div class="2column-content">
+   <div class="left-column-content">
+
+        <%= Caval_go.Controllers.cmsController.getCmsBlockByName("Col_Gauche_Haut").Code%>
+
+        <asp:ContentPlaceHolder ID="LeftColumnContent" runat="server">
+        
+        </asp:ContentPlaceHolder>
+
+        <%= Caval_go.Controllers.cmsController.getCmsBlockByName("Col_Gauche_Bas").Code%>
+
+        <% Html.RenderPartial("leftcolumn_searchbox"); %>
+            
+        <div class="email-signup">
+            <label for="email_signup">Newsletter: </label>
+            <div id="msg_email_signup" style="color:#cc0000;"></div>
+            <div class="email-fields">
+            <input type="text" name="email_signup" id="email_signup" class="input-email" /> <input type="button" id="bt_email_signup" value="GO »" />
+            </div>
+        </div>
+
+
+    </div>
+
+   <div class="main-content">
+        <asp:ContentPlaceHolder ID="MainContent" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+
+    <div class="clear"></div>
+</div>
+
+</asp:Content>

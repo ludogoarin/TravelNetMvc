@@ -1,0 +1,88 @@
+﻿<%@ Master Language="C#" Inherits="System.Web.Mvc.ViewMasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+
+<asp:ContentPlaceHolder ID="cphHead" runat="server">
+    <title>Caval&go - Voyages inédits à cheval - Stages et randonnées équestres</title>
+
+    <link rel="icon" href="/content/images/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="/content/images/favicon.ico" type="image/x-icon" />
+
+    <meta name="description" content="L'émotion du voyage à cheval et de la randonnée équestre dans le monde (France, Maroc,  Mongolie, Jordanie, Argentine, Équateur, Irlande...). Rando cheval et stage équitation pour cavaliers confirmés à débutants." />
+    <meta name="keywords" content="" />
+</asp:ContentPlaceHolder>
+    
+    <!-- CSS -->
+    <link href="/Content/js/resources/jquery-ui-1.8.1/css/redmond/jquery-ui-1.8.1.custom.css" rel="stylesheet" type="text/css" />
+    <link href="/Content/css/global-site.css" rel="stylesheet" type="text/css" />
+
+    <!-- JS -->
+    <script src="/Content/js/resources/jquery-1.4.2.min.js" type="text/javascript"></script>
+    <script src="/Content/js/resources/jquery-validate/jquery.validate.min.js" type="text/javascript"></script>
+    <script src="/Content/js/resources/jquery-ui-1.8.1/js/jquery-ui-1.8.1.custom.min.js" type="text/javascript"></script>
+    <script src="/Content/js/resources/jquery.cycle/jquery.cycle.min.js" type="text/javascript"></script>
+    <script src="/Content/js/resources/stringformat.1.02/stringformat.js" type="text/javascript"></script>
+    <script src="/Content/js/site/site.js" type="text/javascript"></script>
+    
+    <!-- JS Localization -->
+    <script src="/Content/js/resources/jquery-ui-1.8.1/js/jquery.ui.datepicker-fr.js" type="text/javascript"></script>
+    <script src="/Content/js/resources/jquery-validate/localization/messages_fr.js" type="text/javascript"></script>
+   
+</head>
+
+<body>
+    <div class="page">
+
+        <div id="header">
+            <div id="logo">
+                <a href="/"><img src="/Content/images/logo.png" alt="Caval&go" /></a>
+            </div>
+
+            <ul id="utilitynav">              
+                <li><a href="/nous-contacter"><%= Caval_go.Controllers.cmsController.getLangVersion("Nous contacter")%></a></li>
+                <li><a href="/cms/newsletter">Newsletter</a></li>
+                <li id="language_switcher_container"><a href="#"><%= Caval_go.Controllers.cmsController.getLangVersion("Langues")%> (<%= System.Threading.Thread.CurrentThread.CurrentCulture.TwoLetterISOLanguageName %>)</a>
+                <%= Caval_go.Controllers.cmsController.getCmsBlockByName("language_switcher").Code%>
+                </li>
+            </ul>
+                                 
+            <div id="menucontainer">
+                <%= Caval_go.Controllers.cmsController.getCmsBlockByName("Top_Menu").Code%>
+            </div>
+            
+            <div class="clear"></div>
+        </div>
+
+        <div id="main">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+
+            <div id="footer">
+
+                <!-- liens email/imprimer/favoris -->
+                <div class="footer-top">
+                    <%= Caval_go.Controllers.cmsController.getCmsBlockByName("FooterTop").Code%>
+                </div>
+
+                <!-- Footer columns -->
+                <%= Caval_go.Controllers.cmsController.getCmsBlockByName("LiensFooter").Code%>
+                <div class="clear"></div>
+
+                <!-- legal and credits -->
+                <div class="lower-footer">
+                    <div class="copyright">
+                    <%= Caval_go.Controllers.cmsController.getCmsBlockByName("Copyright").Code%>
+                    </div>
+                    <div class="credits">
+                    <a href="http://www.orangesites.com" target="_blank">Website by OrangeSites</a>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <%= Caval_go.Controllers.cmsController.getCmsBlockByName("footer_scripts").Code%>
+</body>
+</html>
